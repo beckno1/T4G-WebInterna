@@ -1,4 +1,4 @@
-/* General Styles */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -24,7 +24,7 @@ header {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* El logo a la izquierda y los botones centrados */
     position: relative;
     z-index: 2;
 }
@@ -40,6 +40,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 20px; /* Espaciado uniforme entre los botones */
+    flex-grow: 1; /* Permite que los enlaces se distribuyan entre el espacio disponible */
 }
 
 nav a {
@@ -52,21 +53,14 @@ nav a:hover {
     color: #4CAF50;
 }
 
-/* Sections */
-.section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 /* Slider Styles */
 #slider {
+    position: relative;
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
+    width: 70%; /* Ancho del slider ajustado al 70% de la página */
+    margin: 0 auto; /* Centra el slider */
 }
 
 .slider-container {
@@ -79,32 +73,35 @@ nav a:hover {
 }
 
 .slider img {
-    width: 100%;
-    height: auto; /* Mantiene la proporción de las imágenes */
-    max-width: 800px; /* Limita el tamaño máximo de las imágenes */
-    max-height: 400px; /* Limita la altura máxima de las imágenes */
-    object-fit: cover; /* Ajusta las imágenes para cubrir el área sin distorsionarlas */
+    width: 100%; /* Las imágenes ocupan el 100% del espacio */
+    height: auto;
+    max-width: 100%; /* Las imágenes ajustan su tamaño al contenedor */
+    object-fit: cover;
     border-radius: 5px;
 }
 
-/* Botones de Slider */
+/* Estilo para los botones de navegación */
 .slider-buttons {
-    margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
 }
 
 .slider-button {
-    background-color: rgba(51, 51, 51, 0.7);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
-    border-radius: 5px;
+    z-index: 2;
 }
 
 .slider-button:hover {
-    background-color: rgba(51, 51, 51, 1);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Footer */

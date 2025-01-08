@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -24,7 +24,7 @@ header {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* El logo a la izquierda y los botones centrados */
+    justify-content: space-between;
     position: relative;
     z-index: 2;
 }
@@ -40,7 +40,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 20px; /* Espaciado uniforme entre los botones */
-    flex-grow: 1; /* Permite que los enlaces se distribuyan entre el espacio disponible */
+    flex-grow: 1; /* Asegura que los botones estén centrados */
 }
 
 nav a {
@@ -53,34 +53,29 @@ nav a:hover {
     color: #4CAF50;
 }
 
-/* Slider Styles */
+/* Slider */
 #slider {
     position: relative;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 70%; /* Ancho ajustado al 70% */
-    margin: 0 auto; /* Centra el slider */
+    width: 70%;
+    margin: 40px auto;
+    overflow: hidden;
 }
 
 .slider-container {
-    overflow: hidden; /* Para ocultar las imágenes que no están visibles */
+    position: relative;
+    width: 100%;
 }
 
 .slider {
     display: flex;
-    transition: transform 1s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 .slider img {
-    width: 100%; /* Las imágenes ocupan el 100% del espacio */
+    width: 100%;
     height: auto;
-    max-width: 100%; /* Las imágenes ajustan su tamaño al contenedor */
-    object-fit: cover;
-    border-radius: 5px;
 }
 
-/* Estilo para los botones de navegación */
 .slider-buttons {
     position: absolute;
     top: 50%;
@@ -88,51 +83,80 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    z-index: 2;
 }
 
 .slider-button {
     background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
     padding: 10px;
-    color: white;
-    font-size: 24px;
     cursor: pointer;
-    z-index: 2;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
 }
 
 .slider-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Rectángulo debajo del slider */
+/* "¿Quiénes Somos?" Section */
 #quienes-somos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 40px;
+    width: 70%;
     margin: 40px auto;
-    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.quienes-somos-box {
-    background-color: #f4f4f4;
-    padding: 40px;
-    border-radius: 10px;
-    width: 70%; /* El mismo ancho que el slider */
-    margin: 0 auto;
+#quienes-somos h3 {
+    font-size: 40px;
+    color: #333;
+    margin: 0;
+    flex: 0 0 40%; /* Título ocupa el 40% del contenedor */
 }
 
-.quienes-somos-box h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.quienes-somos-box p {
-    font-size: 18px;
-    line-height: 1.6;
+#quienes-somos p {
+    font-size: 16px;
+    color: #666;
+    max-width: 60%;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
     color: white;
     margin-top: 20px;
+    position: relative;
+}
+
+/* Redes Sociales en el Footer */
+.social-media {
+    position: absolute;
+    right: 20px; /* Alineado al extremo derecho */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 20px; /* Espaciado entre los íconos */
+}
+
+.social-icon img {
+    width: 40px; /* Tamaño del ícono */
+    height: 40px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Efecto suave para el hover */
+    border-radius: 50%; /* Hacer los íconos redondos */
+    padding: 10px;
+    background-color: white; /* Fondo blanco para contraste */
+}
+
+.social-icon img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el ratón */
+    background-color: #dddddd; /* Color de fondo al pasar el ratón */
 }

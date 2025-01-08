@@ -26,6 +26,23 @@
         </nav>
     </header>
 
+    <!-- Slider de imágenes colocado debajo del encabezado -->
+    <section id="slider" class="section">
+        <h2>Galería de Imágenes</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/ai-generated-8885061.jpg?v=1736299828088" alt="Imagen 1">
+                <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/data-5933101.jpg?v=1736299831840" alt="Imagen 2">
+                <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/internet-3484137.jpg?v=1736299835762" alt="Imagen 3">
+            </div>
+        </div>
+        <!-- Botones de control -->
+        <div class="slider-buttons">
+            <button id="prev" class="slider-button">Anterior</button>
+            <button id="next" class="slider-button">Siguiente</button>
+        </div>
+    </section>
+
     <main>
         <section id="inicio" class="section">
             <h2>Bienvenidos a Think4good</h2>
@@ -76,5 +93,30 @@
     <footer>
         <p>&copy; 2025 Think4good. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slider img');
+        const totalSlides = slides.length;
+        
+        function moveToNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides; // Calcula el siguiente índice
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`; // Mueve el slider a la izquierda
+        }
+
+        function moveToPrevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Calcula el índice anterior
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`; // Mueve el slider a la izquierda
+        }
+
+        // Configura el intervalo para cambiar las imágenes cada 10 segundos (10000 ms)
+        setInterval(moveToNextSlide, 10000);
+
+        // Event listeners para los botones de "Siguiente" y "Anterior"
+        document.getElementById('next').addEventListener('click', moveToNextSlide);
+        document.getElementById('prev').addEventListener('click', moveToPrevSlide);
+    </script>
 </body>
 </html>

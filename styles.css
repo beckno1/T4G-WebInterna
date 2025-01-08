@@ -23,16 +23,10 @@ header {
     background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
     padding: 10px 20px;
     display: flex;
-    justify-content: center; /* Centra todo el contenido */
     align-items: center;
+    justify-content: space-between;
     position: relative;
     z-index: 2;
-}
-
-/* Logo Container */
-.logo-container {
-    position: absolute; /* Coloca el logo de forma absoluta */
-    left: 20px; /* Ajusta la posición del logo */
 }
 
 .logo-container img {
@@ -66,6 +60,51 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider Styles */
+#slider {
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.slider-container {
+    overflow: hidden; /* Para ocultar las imágenes que no están visibles */
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción de las imágenes */
+    max-width: 800px; /* Limita el tamaño máximo de las imágenes */
+    max-height: 400px; /* Limita la altura máxima de las imágenes */
+    object-fit: cover; /* Ajusta las imágenes para cubrir el área sin distorsionarlas */
+    border-radius: 5px;
+}
+
+/* Botones de Slider */
+.slider-buttons {
+    margin-top: 10px;
+}
+
+.slider-button {
+    background-color: rgba(51, 51, 51, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.slider-button:hover {
+    background-color: rgba(51, 51, 51, 1);
 }
 
 /* Footer */

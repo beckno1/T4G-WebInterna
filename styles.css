@@ -3,40 +3,23 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background: src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/fondo.mp4?v=1736295041783" no-repeat center center/cover;
     color: #333333;
 }
 
 header {
-    position: relative;
-    height: 60vh;
-    background: url('header-bg.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
+    background-color: #333333;
+    padding: 10px 20px;
 }
 
-.header-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 5px;
-}
-
-header h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-header p {
-    font-size: 1.2em;
+.logo-container img {
+    height: 50px;
+    display: inline-block;
 }
 
 nav {
     text-align: center;
-    background: #333333;
+    background: #444444;
     padding: 10px 0;
 }
 
@@ -55,7 +38,7 @@ nav a:hover {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

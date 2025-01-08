@@ -59,7 +59,7 @@ nav a:hover {
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
-    width: 70%; /* Ancho del slider ajustado al 70% de la página */
+    width: 70%; /* Ancho ajustado al 70% */
     margin: 0 auto; /* Centra el slider */
 }
 
@@ -102,6 +102,30 @@ nav a:hover {
 
 .slider-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Rectángulo debajo del slider */
+#quienes-somos {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.quienes-somos-box {
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 10px;
+    width: 70%; /* El mismo ancho que el slider */
+    margin: 0 auto;
+}
+
+.quienes-somos-box h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.quienes-somos-box p {
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 /* Footer */

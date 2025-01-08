@@ -150,13 +150,40 @@ footer {
 .social-icon img {
     width: 40px; /* Tamaño del ícono */
     height: 40px;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Efecto suave para el hover */
-    border-radius: 50%; /* Hacer los íconos redondos */
-    padding: 10px;
-    background-color: white; /* Fondo blanco para contraste */
+    transition: transform 0.3s ease;
+    border-radius: 50%; /* Hace los íconos redondos */
+    padding: 0; /* Elimina el padding */
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Elimina cualquier borde */
 }
 
 .social-icon img:hover {
     transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el ratón */
-    background-color: #dddddd; /* Color de fondo al pasar el ratón */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #quienes-somos {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        text-align: center;
+    }
+
+    #quienes-somos h3 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    #quienes-somos p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .slider-button {
+        font-size: 18px;
+        padding: 8px;
+    }
 }

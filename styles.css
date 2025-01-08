@@ -23,7 +23,16 @@ header {
     background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
     padding: 10px 20px;
     display: flex;
+    justify-content: center; /* Centra todo el contenido */
     align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo Container */
+.logo-container {
+    position: absolute; /* Coloca el logo de forma absoluta */
+    left: 20px; /* Ajusta la posición del logo */
 }
 
 .logo-container img {
@@ -36,13 +45,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    margin-left: auto;
+    gap: 20px; /* Espaciado uniforme entre los botones */
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
 }

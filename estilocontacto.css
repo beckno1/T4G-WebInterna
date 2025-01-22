@@ -58,13 +58,13 @@ nav a:hover {
 .contacto-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: #333333;
 }
 
 .contacto-container p {
     margin-bottom: 20px;
     font-size: 16px;
-    color: #555;
+    color: #555555;
 }
 
 form {
@@ -76,13 +76,13 @@ form {
 form label {
     font-weight: bold;
     font-size: 14px;
-    color: #333;
+    color: #333333;
 }
 
 form input, form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 5px;
     font-size: 14px;
 }

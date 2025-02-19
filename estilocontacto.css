@@ -5,9 +5,10 @@ body {
     margin: 0;
     padding: 0;
     color: #333333;
+    background-color: #f7f7f7;
 }
 
-/* Header and Navigation */
+/* Header y navegación (igual que styles.css) */
 header {
     background-color: rgba(51, 51, 51, 0.8);
     padding: 10px 20px;
@@ -15,6 +16,7 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    z-index: 2;
 }
 
 .logo-container img {
@@ -27,6 +29,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-grow: 1;
 }
 
 nav a {
@@ -41,32 +44,33 @@ nav a:hover {
 
 /* Contact Section */
 #contacto {
-    background-color: #f7f7f7;
+    background-color: white;
     padding: 40px 20px;
     text-align: center;
-}
-
-.contacto-container {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
+    margin: 40px auto;
+    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .contacto-container h2 {
-    margin-bottom: 20px;
     font-size: 24px;
     color: #333333;
 }
 
 .contacto-container p {
-    margin-bottom: 20px;
     font-size: 16px;
     color: #555555;
 }
 
+.contacto-imagen {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Formulario de contacto */
 form {
     display: flex;
     flex-direction: column;
@@ -95,25 +99,29 @@ form button {
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
     background-color: #45a049;
 }
 
-/* Footer */
+/* Footer (igual que styles.css) */
 footer {
     text-align: center;
     padding: 20px;
     background: rgba(51, 51, 51, 0.8);
     color: white;
+    margin-top: 20px;
     position: relative;
 }
 
 .social-media {
-    margin-top: 10px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
@@ -126,4 +134,22 @@ footer {
 
 .social-icon img:hover {
     transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-media {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    #contacto {
+        width: 90%;
+    }
 }

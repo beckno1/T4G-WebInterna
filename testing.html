@@ -38,136 +38,77 @@
 
 <!-- HTML + CSS para softwareamedida.html manteniendo coherencia visual con marketing.html, consultoría.html y proyectos.html -->
  <section class="testing-section">
-        <h2>QA Testing y Programación</h2>
-        <div class="contenido-testing">
-            <div class="texto-testing">
-                <h3>¿Por qué es importante el QA Testing?</h3>
-                <ul>
-                    <li>🔍 Identificación temprana de errores para evitar fallos en producción.</li>
-                    <li>⚡ Aseguramiento de calidad y cumplimiento de estándares.</li>
-                    <li>🔄 Pruebas automatizadas para mejorar eficiencia y cobertura.</li>
-                </ul>
+    <h2>QA Testing y Programación</h2>
+    <div class="contenido-testing">
+        <div class="texto-testing">
+            <h3>¿Por qué es importante el QA Testing?</h3>
+            <ul>
+                <li>🔍 Identificación temprana de errores para evitar fallos en producción.</li>
+                <li>⚡ Aseguramiento de calidad y cumplimiento de estándares.</li>
+                <li>🔄 Pruebas automatizadas para mejorar eficiencia y cobertura.</li>
+            </ul>
 
-                <h3>¿Cómo trabajamos en Programación?</h3>
-                <ol>
-                    <li>📌 <strong>Análisis de requerimientos</strong>: Comprendemos las necesidades del proyecto.</li>
-                    <li>💻 <strong>Desarrollo Ágil</strong>: Aplicamos metodologías modernas para un desarrollo eficiente.</li>
-                    <li>🚀 <strong>Implementación y pruebas</strong>: Validamos la funcionalidad y optimizamos el rendimiento.</li>
-                </ol>
-                
-                <div class="cta">
-                    <h3>¿Quieres garantizar la calidad de tu software?</h3>
-                    <a href="contacto.html" class="btn-contacto">¡Hablemos!</a>
-                </div>
+            <h3>¿Cómo trabajamos en Programación?</h3>
+            <ol>
+                <li>📌 <strong>Análisis de requerimientos</strong>: Comprendemos las necesidades del proyecto.</li>
+                <li>💻 <strong>Desarrollo Ágil</strong>: Aplicamos metodologías modernas para un desarrollo eficiente.</li>
+                <li>🚀 <strong>Implementación y pruebas</strong>: Validamos la funcionalidad y optimizamos el rendimiento.</li>
+            </ol>
+
+            <div class="cta">
+                <h3>¿Quieres garantizar la calidad de tu software?</h3>
+                <a href="contacto.html" class="btn-contacto">¡Hablemos!</a>
             </div>
-            <div class="imagen-marketing">
-    <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/What-Is-QA-Testing.jpg?v=1740232413299" alt="QA Testing y Programación">
-</div>
-
         </div>
-    </section>
+        <div class="imagen-testing">
+            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/What-Is-QA-Testing.jpg?v=1740232413299" alt="QA Testing y Programación">
+        </div>
+    </div>
+</section>
 
   <style>
-.consultoria-section {
-    padding: 80px 15%;
-    background: linear-gradient(135deg, #fefcfb, #f5f0ee);
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-.consultoria-section h2 {
-    font-size: 2.5rem;
-    color: #2d3748;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #ed8936;
-    display: inline-block;
-    padding-bottom: 10px;
-    animation: fadeInDown 1s ease;
-}
-
-.consultoria-section .intro {
-    font-size: 1.2rem;
-    color: #4a5568;
-    margin-bottom: 40px;
-}
-
-.contenido-consultoria {
-    max-width: 800px;
+.contenido-testing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 40px;
+}
+
+.texto-testing {
+    flex: 1; /* Ocupa el espacio disponible */
     text-align: left;
 }
 
-.beneficios, .proceso-trabajo {
-    margin-bottom: 30px;
+.imagen-testing {
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    justify-content: flex-end; /* Alinea la imagen a la derecha */
 }
 
-.beneficios ul, .proceso-trabajo ol {
-    list-style: none;
-    padding: 0;
-    font-size: 1rem;
-    color: #4a5568;
-    line-height: 1.8;
-}
-
-.beneficios h3, .proceso-trabajo h3 {
-    color: #2d3748;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.cta {
-    margin-top: 30px;
-}
-
-.cta h3 {
-    font-size: 1.5rem;
-    color: #2d3748;
-    margin-bottom: 20px;
-}
-
-.btn-contacto {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #ed8936;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn-contacto:hover {
-    background-color: #dd6b20;
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 1024px) {
-    .consultoria-section {
-        padding: 80px 10%;
-    }
-}
-
-@media (max-width: 768px) {
-    .consultoria-section {
-        padding: 60px 5%;
-    }
-
-    .contenido-consultoria {
-        text-align: center;
-    }
-}
-.imagen-marketing img {
-    max-width: 40%; /* Reducir el tamaño */
-    height: auto; /* Mantener la proporción */
+.imagen-testing img {
+    max-width: 80%; /* Ajusta el tamaño de la imagen */
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 0 auto;
 }
+@media (max-width: 768px) {
+    .contenido-testing {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagen-testing {
+        justify-content: center;
+    }
+
+    .imagen-testing img {
+        max-width: 100%; /* Que ocupe todo el ancho en móviles */
+    }
+}
+
 
 
   </style>

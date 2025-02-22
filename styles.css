@@ -41,10 +41,11 @@ footer {
     text-decoration: underline;
 }
 
-.footer-content p {
-    margin: 0;
+.footer-text {
     flex: 1;
     text-align: center;
+    margin: 0;
+    font-size: 14px;
 }
 
 .social-media {
@@ -56,10 +57,22 @@ footer {
 
 .social-media a {
     color: white;
-    font-size: 24px; /* Aumentado en un 20% */
+    font-size: 28.8px; /* Aumentado en un 20% */
     transition: transform 0.3s ease;
 }
 
 .social-media a:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-nav, .social-media {
+        justify-content: center;
+        margin-top: 10px;
+    }
 }

@@ -24,12 +24,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: #3e5a80; /* 🎨 Color actualizado para combinar con la imagen */
-    color: white;
-    position: sticky;
+    background-color: #20232a;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
+    height: 80px;
 }
 
 .logo-container img {
@@ -305,7 +306,7 @@ footer {
     text-align: center;
     margin-bottom: 25px;
     margin-top: 50px; /* 🆕 Espacio extra sobre el encabezado */
-    color: #09d5cc ; /* Azulino oscuro */
+    color: #1f2937; /* Azulino oscuro */
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -370,7 +371,7 @@ form input, form textarea {
 }
 
 form input:focus, form textarea:focus {
-    box-shadow: #09d5cc ; /* Azulino oscuro */
+    box-shadow: 0 0 15px rgba(31, 41, 55, 0.6); /* Azulino oscuro */
     border-color: #1f2937;
 }
 
@@ -378,7 +379,7 @@ form button {
     padding: 15px;
     border-radius: 10px;
     border: none;
-    background: #09d5cc ; /* Azulino oscuro */
+    background: #1e40af; /* Azulino oscuro */
     color: white;
     font-size: 1.1rem;
     cursor: pointer;

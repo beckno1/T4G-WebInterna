@@ -20,24 +20,25 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    text-align: center;
 }
 
-.footer-nav {
+.footer-links {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     gap: 15px;
 }
 
-.footer-nav a {
+.footer-links a {
     color: white;
     text-decoration: none;
 }
 
-.footer-nav a:hover {
+.footer-links a:hover {
     text-decoration: underline;
 }
 
@@ -71,8 +72,12 @@ footer {
         align-items: center;
         text-align: center;
     }
-    .footer-nav, .social-media {
-        justify-content: center;
-        margin-top: 10px;
+    .footer-links {
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .social-media {
+        justify-content: flex-end;
+        width: 100%;
     }
 }

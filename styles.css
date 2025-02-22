@@ -297,21 +297,25 @@ footer {
     border-radius: 4px;
 }
 
-/* ✉️ Encabezado de Contacto con animación */
+/* 🔄 Estilos adicionales para contacto.html (actualización de colores formales) */
+
+/* ✉️ Encabezado de Contacto con animación y centrado */
 #contacto h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #61dafb, #a78bfa, #f472b6);
-    -webkit-background-clip: text;
-    color: transparent;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 50px; /* 🆕 Espacio extra sobre el encabezado */
+    color: #1f2937; /* Azulino oscuro */
     animation: fadeIn 2s ease-in-out;
 }
 
 #contacto p {
     font-size: 1.2rem;
     line-height: 1.8;
-    margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 35px;
+    color: #374151; /* Gris oscuro */
     animation: fadeIn 2.5s ease-in-out;
 }
 
@@ -320,33 +324,86 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 💡 Efecto de enfoque en campos del formulario */
-form input:focus, form textarea:focus {
-    box-shadow: 0 0 15px rgba(97, 218, 251, 0.6);
-    border-color: #a78bfa;
+/* 💎 Contenedor centrado y moderno con colores formales */
+.contacto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 30px; /* 🆕 Más espacio arriba y abajo */
+    max-width: 800px;
+    margin: 70px auto; /* 🆕 Espacio superior e inferior entre header y footer */
+    background: #f9fafb; /* Gris muy claro */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
-/* ✨ Animación al pasar el mouse por el botón */
-form button:hover {
-    background: linear-gradient(90deg, #60a5fa, #f472b6);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
-
-/* 🌐 Animación para la imagen de contacto */
+/* 🖼️ Imagen responsive y centrada */
 .contacto-imagen {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-bottom: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contacto-imagen:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* 💎 Borde brilloso animado más dinámico */
+/* 📝 Formulario estilizado con colores formales */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #9ca3af; /* Gris medio */
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    box-shadow: 0 0 15px rgba(31, 41, 55, 0.6); /* Azulino oscuro */
+    border-color: #1f2937;
+}
+
+form button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #1e40af; /* Azulino oscuro */
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* 💎 Borde animado con tonos formales */
 .contacto-container::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 22px;
+    background: linear-gradient(45deg, #1f2937, #1e40af, #4b5563);
     background-size: 400% 400%;
     animation: shineBorder 8s infinite linear;
+    z-index: -1;
 }
 
 @keyframes shineBorder {
@@ -356,9 +413,10 @@ form button:hover {
 }
 
 /* 📱 Mejoras responsive para sección de contacto */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     #contacto h2 {
-        font-size: 2rem;
+        font-size: 2.3rem;
+        margin-top: 40px;
     }
 
     #contacto p {
@@ -366,16 +424,17 @@ form button:hover {
     }
 
     .contacto-container {
-        padding: 30px 15px;
+        padding: 50px 20px;
+        margin: 50px auto;
     }
 
     form input, form textarea {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
 
-/* 🎨 Sombra interactiva en el formulario */
+/* 🎨 Sombra interactiva en el formulario con tono formal */
 .contacto-container:hover {
-    box-shadow: 0 0 50px rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 50px rgba(31, 41, 55, 0.3);
     transition: box-shadow 0.5s ease;
 }

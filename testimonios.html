@@ -36,17 +36,149 @@
         </nav>
     </header>
 
-    <section id="testimonios">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <div class="testimonio">
+    <!-- HTML + CSS para Testimonios con diseño en cuadrados -->
+<section class="testimonios-section">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonial-cards">
+        <div class="testimonial-card">
             <p>"Think4good nos ayudó a digitalizar nuestros procesos de manera eficiente y rápida. ¡Muy recomendados!"</p>
-            <span>- Carlos Mendoza</span>
+            <h4>- Carlos Mendoza</h4>
         </div>
-        <div class="testimonio">
+        <div class="testimonial-card">
             <p>"Gracias a Think4good, logramos encontrar al mejor talento en TI para nuestro equipo."</p>
-            <span>- Ana Ramírez</span>
+            <h4>- Ana Ramírez</h4>
         </div>
-    </section>
+        <div class="testimonial-card">
+            <p>"Su enfoque personalizado marcó la diferencia. El crecimiento de nuestro negocio ha sido notable."</p>
+            <h4>- Javier López</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"El equipo de Think4good se destacó por su profesionalismo y rapidez en la entrega de soluciones."</p>
+            <h4>- Mariana Torres</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"Excelente experiencia. La optimización de nuestros procesos tecnológicos fue clave para aumentar la productividad."</p>
+            <h4>- Andrés Salazar</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"Con Think4good implementamos soluciones de seguridad web robustas. Estamos muy satisfechos."</p>
+            <h4>- Paula Jiménez</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"Muy agradecidos con el soporte continuo que recibimos. Su equipo es altamente competente."</p>
+            <h4>- Roberto Castillo</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"Sus servicios de análisis de datos mejoraron significativamente nuestras decisiones estratégicas."</p>
+            <h4>- Laura Sánchez</h4>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Estilo mejorado con animaciones e interactividad */
+.testimonios-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.testimonios-section h2 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #3182ce;
+    padding-bottom: 10px;
+    animation: fadeInDown 1s ease;
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.testimonial-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(49,130,206,0.2), rgba(49,130,206,0.6));
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.testimonial-card:hover::before {
+    left: 0;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.testimonial-card h4 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonios-section h2 {
+        font-size: 2rem;
+    }
+
+    .testimonial-card p {
+        font-size: 1rem;
+    }
+}
+</style>
+
 
      <footer>
         <div class="footer-content">

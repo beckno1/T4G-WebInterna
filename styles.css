@@ -167,6 +167,10 @@ footer {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    position: fixed; /* Fija el footer */
+    bottom: 0; /* Lo coloca en la parte inferior */
+    left: 0;
 }
 
 .footer-content {

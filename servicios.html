@@ -36,21 +36,108 @@
         </nav>
     </header>
 
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="servicio">
+    <section class="servicios-section">
+    <h2>Nuestros Servicios</h2>
+    <div class="servicios-container">
+        <div class="servicio-card">
+            <div class="icono">💡</div>
             <h3>Consultoría en Transformación Digital</h3>
             <p>Ayudamos a las empresas a digitalizar sus procesos con estrategias innovadoras.</p>
         </div>
-        <div class="servicio">
+        <div class="servicio-card">
+            <div class="icono">👨‍💻</div>
             <h3>Selección de Talento TI</h3>
             <p>Reclutamos y seleccionamos a los mejores profesionales en tecnología.</p>
         </div>
-        <div class="servicio">
+        <div class="servicio-card">
+            <div class="icono">🖥️</div>
             <h3>Desarrollo de Software</h3>
             <p>Implementamos soluciones tecnológicas adaptadas a las necesidades de cada negocio.</p>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+/* Estilo para la sección de servicios con íconos, animaciones y diseño limpio */
+.servicios-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.servicios-section h2 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #38b2ac;
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: fadeInDown 1s ease;
+}
+
+.servicios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.servicio-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    animation: fadeInUp 1s ease;
+    transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+}
+
+.servicio-card .icono {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #38b2ac;
+    animation: bounce 2s infinite;
+}
+
+.servicio-card h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.servicio-card p {
+    font-size: 1rem;
+    color: #4a5568;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+    .servicios-section h2 { font-size: 2rem; }
+    .servicio-card { max-width: 100%; }
+}
+</style>
 
     <footer>
         <div class="footer-content">

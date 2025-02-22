@@ -15,12 +15,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* Envía el video detrás del contenido */
+    z-index: -1;
 }
 
-/* Header and Navigation Container */
+/* Header and Navigation */
 header {
-    background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
+    background-color: rgba(51, 51, 51, 0.8);
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -31,16 +31,13 @@ header {
 
 .logo-container img {
     height: 50px;
-    display: inline-block;
 }
 
-/* Navigation */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Espaciado uniforme entre los botones */
-    flex-grow: 1; /* Asegura que los botones estén centrados */
+    gap: 20px;
 }
 
 nav a {
@@ -53,137 +50,98 @@ nav a:hover {
     color: #4CAF50;
 }
 
-/* Slider */
-#slider {
+/* Dropdown Menu */
+.dropdown {
     position: relative;
-    width: 70%;
-    margin: 40px auto;
-    overflow: hidden;
+    display: inline-block;
 }
 
-.slider-container {
-    position: relative;
-    width: 100%;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.slider img {
-    width: 100%;
-    height: auto;
-}
-
-.slider-buttons {
+.dropdown-content {
+    display: none;
     position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    position: relative;
     z-index: 2;
 }
 
-.slider-button {
-    background-color: rgba(0, 0, 0, 0.5);
+.btn-primary {
+    background-color: #4CAF50;
     color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.slider-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* "¿Quiénes Somos?" Section */
-#quienes-somos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin-top: 40px;
-    width: 70%;
-    margin: 40px auto;
+    padding: 10px 20px;
+    text-decoration: none;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 20px;
 }
 
-#quienes-somos h3 {
-    font-size: 40px;
-    color: #333;
-    margin: 0;
-    flex: 0 0 40%; /* Título ocupa el 40% del contenedor */
+.btn-primary:hover {
+    background-color: #45a049;
 }
 
-#quienes-somos p {
-    font-size: 16px;
-    color: #666;
-    max-width: 60%;
+/* "Quiénes Somos" Section */
+.quienes-somos {
+    background-color: #f0f0f0;
+    padding: 40px;
+    text-align: center;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
+    background: rgba(51, 51, 51, 0.8);
     color: white;
-    margin-top: 20px;
     position: relative;
 }
 
-/* Redes Sociales en el Footer */
-.social-media {
-    position: absolute;
-    right: 20px; /* Alineado al extremo derecho */
-    top: 50%;
-    transform: translateY(-50%);
+.footer-content {
     display: flex;
-    gap: 20px; /* Espaciado entre los íconos */
+    flex-direction: column;
+    align-items: center;
 }
 
-.social-icon img {
-    width: 40px; /* Tamaño del ícono */
-    height: 40px;
-    transition: transform 0.3s ease;
-    border-radius: 50%; /* Hace los íconos redondos */
-    padding: 0; /* Elimina el padding */
-    background-color: transparent; /* Fondo transparente */
-    border: none; /* Elimina cualquier borde */
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
 }
 
-.social-icon img:hover {
-    transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el ratón */
+.social-media a {
+    color: white;
+    font-size: 20px;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    #quienes-somos {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        text-align: center;
-    }
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
 
-    #quienes-somos h3 {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    #quienes-somos p {
-        font-size: 14px;
-        max-width: 100%;
-    }
-
-    .slider-container {
-        width: 100%;
-    }
-
-    .slider-button {
-        font-size: 18px;
-        padding: 8px;
-    }
+.footer-links a:hover {
+    text-decoration: underline;
 }

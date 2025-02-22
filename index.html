@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Think4good</title>
+    <title>Think4Good</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -35,38 +35,34 @@
             </ul>
         </nav>
     </header>
-
-    <section class="hero">
-        <div class="video-overlay"></div>
-        <video class="video-background" autoplay muted loop>
-            <source src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/fondo.mp4?v=1736295041783" type="video/mp4">
-        </video>
-        <div class="hero-content">
-            <h1>Transformamos tu negocio con innovación</h1>
-            <p>Impulsamos tu empresa con talento, procesos eficientes y tecnología de vanguardia.</p>
-            <a href="#" class="btn-primary">Explorar soluciones</a>
-            <div class="content">
-                <h2>¿Quiénes somos?</h2>
-                <p>Somos una empresa especializada en soluciones tecnológicas avanzadas...</p>
-            </div>
-            <div class="content">
-                <h2>Nuestros Servicios</h2>
-                <p>Ofrecemos consultoría TI, desarrollo de software a medida y más.</p>
-            </div>
+    
+    <div class="hero">
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/fondo.mp4?v=1736295041783" type="video/mp4">
+            </video>
         </div>
-    </section>
-
+        <div class="hero-content">
+            <div class="hero-slider">
+                <p class="active">Transformamos tu negocio con innovación</p>
+                <p>Soluciones tecnológicas avanzadas para tu empresa</p>
+                <p>Consultoría y desarrollo de software a medida</p>
+            </div>
+            <a href="#" class="btn-primary">Conoce más</a>
+        </div>
+    </div>
+    
     <footer>
         <div class="footer-content">
-            <div class="footer-links" style="text-align: left;">
+            <div class="footer-links">
                 <a href="politica-privacidad.html">Política de Privacidad</a>
                 <a href="terminos-condiciones.html">Términos y Condiciones</a>
                 <a href="contacto.html">Contacto</a>
             </div>
-            <div class="footer-center" style="text-align: center;">
-                <p>&copy; 2025 Think4good. Todos los derechos reservados.</p>
+            <div class="footer-center">
+                &copy; 2025 Think4Good. Todos los derechos reservados.
             </div>
-            <div class="social-media" style="text-align: right;">
+            <div class="social-media">
                 <a href="https://www.facebook.com/t4gthinkforgood" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@t4g_pe" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="https://www.instagram.com/t4g_pe" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -75,19 +71,21 @@
             </div>
         </div>
     </footer>
-  <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = document.querySelectorAll(".slider img");
-            let currentImageIndex = 0;
-            
-            function changeImage() {
-                images[currentImageIndex].classList.remove("active");
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                images[currentImageIndex].classList.add("active");
-            }
-            
-            setInterval(changeImage, 4000);
-        });
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const texts = document.querySelectorAll(".hero-slider p");
+        let currentIndex = 0;
+        
+        function changeText() {
+            texts[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % texts.length;
+            texts[currentIndex].classList.add("active");
+        }
+        
+        texts[currentIndex].classList.add("active");
+        setInterval(changeText, 4000);
+    });
     </script>
 </body>
 </html>

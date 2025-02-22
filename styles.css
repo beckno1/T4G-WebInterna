@@ -158,12 +158,12 @@ nav {
 .services-section-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a202c;
+    color: #1f2937;
 }
 
 .services-section-header p {
     font-size: 1.1rem;
-    color: #4a5568;
+    color: #1f2937;
     line-height: 1.6;
     max-width: 600px;
 }
@@ -175,7 +175,7 @@ nav {
 }
 
 .service-item {
-    background-color: #f0f4f8;
+    background-color: #1f2937;
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
@@ -189,7 +189,7 @@ nav {
 
 .service-item i {
     font-size: 3rem;
-    color: #3182ce;
+    color: #1f2937;
     margin-bottom: 1rem;
 }
 
@@ -306,7 +306,7 @@ footer {
     text-align: center;
     margin-bottom: 25px;
     margin-top: 50px; /* 🆕 Espacio extra sobre el encabezado */
-    color: #1f2937; /* Azulino oscuro */
+    color: #4df3eb; 
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -371,7 +371,7 @@ form input, form textarea {
 }
 
 form input:focus, form textarea:focus {
-    box-shadow: 0 0 15px rgba(31, 41, 55, 0.6); /* Azulino oscuro */
+    box-shadow: #4df3eb; /* Azulino oscuro */
     border-color: #1f2937;
 }
 

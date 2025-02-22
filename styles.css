@@ -462,37 +462,74 @@ form button:hover {
 }
 
 .clients-section {
+    position: relative;
     text-align: center;
     padding: 3rem 2rem;
-    background-color: #f9f9f9;
+    overflow: hidden;
 }
 
-.clients-section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #6B240C; /* Color similar al de la imagen */
+.clients-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Capa oscura para mejor visibilidad del texto */
+    z-index: 1;
+}
+
+.clients-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.clients-slider, .clients-section h2 {
+    position: relative;
+    z-index: 2;
+}
+
+.clients-slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .clients-logos {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    gap: 4rem;
+    animation: slideLeft 40s linear infinite; /* Velocidad reducida a 40s */
 }
 
 .clients-logos img {
-    max-width: 120px;
+    width: 200px; /* Más grandes */
     height: auto;
     transition: transform 0.3s ease;
 }
 
 .clients-logos img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
-/* Responsive para pantallas pequeñas */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Solo se desplaza la mitad gracias al duplicado */
+    }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .clients-logos img {
-        max-width: 90px;
+        width: 140px;
     }
 }

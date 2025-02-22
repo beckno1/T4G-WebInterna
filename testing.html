@@ -37,84 +37,63 @@
     </header>
 
 <!-- HTML + CSS para softwareamedida.html manteniendo coherencia visual con marketing.html, consultoría.html y proyectos.html -->
-<section class="software-section">
-    <h2>Software a Medida para tu Negocio</h2>
-
-    <div class="contenido-software">
-        <div class="texto-software">
-            <div class="beneficios">
-                <h3>¿Por Qué Elegirnos?</h3>
+ <section class="testing-section">
+        <h2>QA Testing y Programación</h2>
+        <div class="contenido-testing">
+            <div class="texto-testing">
+                <h3>¿Por qué es importante el QA Testing?</h3>
                 <ul>
-                    <li>💡 Desarrollo completamente personalizado según tus necesidades.</li>
-                    <li>⚙️ Integración fluida con tus procesos empresariales existentes.</li>
-                    <li>🚀 Soluciones escalables y seguras para el crecimiento sostenido.</li>
+                    <li>🔍 Identificación temprana de errores para evitar fallos en producción.</li>
+                    <li>⚡ Aseguramiento de calidad y cumplimiento de estándares.</li>
+                    <li>🔄 Pruebas automatizadas para mejorar eficiencia y cobertura.</li>
                 </ul>
-            </div>
 
-            <div class="proceso-trabajo">
-                <h3>Proceso de Desarrollo</h3>
+                <h3>¿Cómo trabajamos en Programación?</h3>
                 <ol>
-                    <li>🧩 <strong>Análisis de Requerimientos</strong>: Entendemos tus necesidades y objetivos.</li>
-                    <li>🛠️ <strong>Diseño y Desarrollo</strong>: Creamos soluciones eficientes y personalizadas.</li>
-                    <li>🔄 <strong>Pruebas y Optimización</strong>: Garantizamos el rendimiento y la calidad antes del lanzamiento.</li>
+                    <li>📌 <strong>Análisis de requerimientos</strong>: Comprendemos las necesidades del proyecto.</li>
+                    <li>💻 <strong>Desarrollo Ágil</strong>: Aplicamos metodologías modernas para un desarrollo eficiente.</li>
+                    <li>🚀 <strong>Implementación y pruebas</strong>: Validamos la funcionalidad y optimizamos el rendimiento.</li>
                 </ol>
+                
+                <div class="cta">
+                    <h3>¿Quieres garantizar la calidad de tu software?</h3>
+                    <a href="contacto.html" class="btn-contacto">¡Hablemos!</a>
+                </div>
             </div>
-
-            <div class="cta">
-                <h3>¿Quieres un software que impulse tu negocio?</h3>
-                <a href="contacto.html" class="btn-contacto">¡Trabajemos juntos!</a>
+            <div class="imagen-testing">
+                <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/What-Is-QA-Testing.jpg?v=1740232413299" alt="QA Testing y Programación">
             </div>
         </div>
+    </section>
 
-        <div class="imagen-software">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/desarrollo-de-software-bogota-800x534-1.jpg?v=1740231492632" alt="Imagen Software a Medida">
-        </div>
-    </div>
-</section>
-
-<style>
-/* Estilo para softwareamedida.html manteniendo coherencia visual */
-.software-section {
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  <style>
+.consultoria-section {
+    padding: 80px 15%;
+    background: linear-gradient(135deg, #fefcfb, #f5f0ee);
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
-.software-section h2 {
+.consultoria-section h2 {
     font-size: 2.5rem;
     color: #2d3748;
     margin-bottom: 20px;
-    border-bottom: 3px solid #48bb78;
+    border-bottom: 3px solid #ed8936;
     display: inline-block;
     padding-bottom: 10px;
     animation: fadeInDown 1s ease;
 }
 
-.contenido-software {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 60px;
-    flex-wrap: wrap;
+.consultoria-section .intro {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 40px;
 }
 
-.texto-software {
-    flex: 1;
-    min-width: 320px;
+.contenido-consultoria {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: left;
-    padding-left: 40px;
-}
-
-.imagen-software {
-    flex: 1;
-    min-width: 300px;
-    text-align: right;
-}
-
-.imagen-software img {
-    max-width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .beneficios, .proceso-trabajo {
@@ -135,6 +114,10 @@
     font-size: 1.8rem;
 }
 
+.cta {
+    margin-top: 30px;
+}
+
 .cta h3 {
     font-size: 1.5rem;
     color: #2d3748;
@@ -144,7 +127,7 @@
 .btn-contacto {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #48bb78;
+    background-color: #ed8936;
     color: #fff;
     border-radius: 30px;
     text-decoration: none;
@@ -153,7 +136,7 @@
 }
 
 .btn-contacto:hover {
-    background-color: #38a169;
+    background-color: #dd6b20;
 }
 
 @keyframes fadeInDown {
@@ -161,23 +144,31 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+@media (max-width: 1024px) {
+    .consultoria-section {
+        padding: 80px 10%;
+    }
+}
+
 @media (max-width: 768px) {
-    .contenido-software {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .consultoria-section {
+        padding: 60px 5%;
     }
 
-    .texto-software {
-        text-align: center;
-        padding-left: 0;
-    }
-
-    .imagen-software {
+    .contenido-consultoria {
         text-align: center;
     }
 }
-</style>
+.imagen-marketing img {
+    max-width: 60%; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+  </style>
 
 
     <footer>

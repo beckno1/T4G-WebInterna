@@ -39,26 +39,51 @@
     <section class="servicios-section">
     <h2>Nuestros Servicios</h2>
     <div class="servicios-container">
-        <div class="servicio-card">
+        <a href="consultoría.html" class="servicio-card">
             <div class="icono">💡</div>
-            <h3>Consultoría en Transformación Digital</h3>
-            <p>Ayudamos a las empresas a digitalizar sus procesos con estrategias innovadoras.</p>
-        </div>
-        <div class="servicio-card">
-            <div class="icono">👨‍💻</div>
-            <h3>Selección de Talento TI</h3>
-            <p>Reclutamos y seleccionamos a los mejores profesionales en tecnología.</p>
-        </div>
-        <div class="servicio-card">
-            <div class="icono">🖥️</div>
-            <h3>Desarrollo de Software</h3>
-            <p>Implementamos soluciones tecnológicas adaptadas a las necesidades de cada negocio.</p>
-        </div>
+            <h3>Consultoría TI & Procesos</h3>
+            <p>Comienza evaluando el estado actual de tu negocio.</p>
+        </a>
+        <a href="marketing.html" class="servicio-card">
+            <div class="icono">📈</div>
+            <h3>Marketing Digital</h3>
+            <p>Impulsa tu presencia y conecta con tu audiencia en el entorno digital.</p>
+        </a>
+        <a href="proyectos.html" class="servicio-card">
+            <div class="icono">💻</div>
+            <h3>Proyectos TI</h3>
+            <p>Llevamos tus ideas al siguiente nivel con soluciones tecnológicas innovadoras.</p>
+        </a>
+        <a href="softwareamedida.html" class="servicio-card">
+            <div class="icono">🛠️</div>
+            <h3>Softwares a tu medida</h3>
+            <p>Creamos herramientas tecnológicas que se adaptan a las necesidades de tu negocio.</p>
+        </a>
+        <a href="testing.html" class="servicio-card">
+            <div class="icono">🔍</div>
+            <h3>QA Testing & Automatización</h3>
+            <p>Asegura la excelencia de tus productos detectando y corrigiendo fallos a tiempo.</p>
+        </a>
+        <a href="helpdesk.html" class="servicio-card">
+            <div class="icono">🛡️</div>
+            <h3>Service Desk & Help Desk</h3>
+            <p>Garantiza la continuidad de tus operaciones sin interrupciones.</p>
+        </a>
+        <a href="staffingti.html" class="servicio-card">
+            <div class="icono">👥</div>
+            <h3>Staffing TI</h3>
+            <p>Tu socio estratégico para encontrar el talento perfecto para cada proyecto.</p>
+        </a>
+        <a href="softwarefactory.html" class="servicio-card">
+            <div class="icono">⚡</div>
+            <h3>Software Factory</h3>
+            <p> Desarrollo ágil, eficiente y a la medida de tus objetivos.</p>
+        </a>
     </div>
 </section>
 
 <style>
-/* Estilo para la sección de servicios con íconos, animaciones y diseño limpio */
+/* Estilo para la sección de servicios con enlaces, íconos, animaciones y diseño limpio */
 .servicios-section {
     padding: 80px 20px;
     background: linear-gradient(135deg, #edf2f7, #e2e8f0);
@@ -92,11 +117,14 @@
     max-width: 350px;
     text-align: center;
     animation: fadeInUp 1s ease;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
 }
 
 .servicio-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .servicio-card .icono {
@@ -138,6 +166,7 @@
     .servicio-card { max-width: 100%; }
 }
 </style>
+
 
     <footer>
         <div class="footer-content">

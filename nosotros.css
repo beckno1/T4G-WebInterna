@@ -1,46 +1,106 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    color: #333333;
+    box-sizing: border-box;
 }
 
-/* Header and Navigation Container */
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header */
 header {
-    background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
-    padding: 10px 20px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 2;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
 }
 
 .logo-container img {
     height: 50px;
-    display: inline-block;
 }
 
-/* Navigation */
-nav {
+/* Mover los enlaces del menú más a la izquierda */
+.nav-links {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Espaciado uniforme entre los botones */
-    flex-grow: 1; /* Asegura que los botones estén centrados */
+    list-style: none;
+    position: relative;
+    left: -50px; /* Ajusta este valor según lo necesites */
 }
 
-nav a {
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
-nav a:hover {
-    color: #4CAF50;
-}
-
-/* Footer */
+/* Footer (tomado de styles.css) */
 footer {
     background-color: #333333;
     color: white;
@@ -75,7 +135,6 @@ footer {
     flex: 1;
 }
 
-/* Redes sociales alineadas a la derecha */
 /* Redes sociales alineadas a la derecha y más grandes */
 .social-media {
     text-align: right;
@@ -91,32 +150,4 @@ footer {
 
 .social-media a:hover {
     transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
-}
-
-
-/* Media Queries */
-@media (max-width: 768px) {
-    #quienes-somos {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        text-align: center;
-    }
-
-    #quienes-somos h3 {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    #quienes-somos p {
-        font-size: 14px;
-        max-width: 100%;
-    }
-
-    .slider-container {
-        width: 100%;
-    }
-
-    .slider-button {
-        font-size: 18px;
-        padding: 8px;
-    }
 }

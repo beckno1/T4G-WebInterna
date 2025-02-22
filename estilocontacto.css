@@ -1,112 +1,165 @@
-/* General Styles */
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Fira Sans', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
     color: #333333;
-    background-color: #f7f7f7;
 }
 
-/* Header y navegación (igual que styles.css) */
+/* Header */
 header {
-    background-color: rgba(51, 51, 51, 0.8);
-    padding: 10px 20px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 2;
+    align-items: center;
+    background-color: #20232a;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo-container img {
     height: 50px;
-    display: inline-block;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-grow: 1;
+    justify-content: flex-start; /* Alinea el menú a la izquierda */
+    padding-left: 80px; /* Ajusta este valor según sea necesario */
+    width: auto; /* Evita que ocupe todo el ancho */
 }
 
-nav a {
-    color: white;
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  position: relative;
+    left: -80px; /* Ajusta este valor según lo necesites */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
     text-decoration: none;
-    font-weight: bold;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #4CAF50;
+.nav-links a:hover {
+    color: #61dafb;
 }
 
-/* Contact Section */
-#contacto {
-    background-color: white;
-    padding: 40px 20px;
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #20232a;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: white;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    background: #61dafb;
+    color: black;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: white;
+}
+
+.video-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
     max-width: 600px;
-    margin: 40px auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.contacto-container h2 {
-    font-size: 24px;
-    color: #333333;
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
-.contacto-container p {
-    font-size: 16px;
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #61dafb;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #4fb3d4;
+}
+
+/* Sección de contenido */
+.content {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #20232a;
+}
+
+.content p {
+    font-size: 1.1rem;
     color: #555555;
 }
 
-.contacto-imagen {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
+/* Footer (se mantiene como estaba) */
 
-/* Formulario de contacto */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-form label {
-    font-weight: bold;
-    font-size: 14px;
-    color: #333333;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #45a049;
-}
-
-/* Footer (igual que styles.css) */
 footer {
     background-color: #333333;
     color: white;

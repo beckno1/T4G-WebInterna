@@ -76,15 +76,27 @@ nav {
     text-align: center;
     color: white;
     flex: 1;
+ height: calc(100vh - 80px); /* 80px es la altura del header */
 }
 
 .video-container {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1;
+    z-index: 1;
 }
+
+.content-container {
+    background-color: white;
+    border-radius: 40px 40px 0 0;
+    padding: 80px 40px;
+    margin-top: -180px; /* 🔧 Aumenta para una superposición más marcada */
+    box-shadow: 0px -20px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
+}
+
 
 .video-container video {
     width: 100%;
@@ -131,6 +143,7 @@ nav {
 .btn-primary:hover {
     background: #4fb3d4;
 }
+
 
 /* Footer fijado en la parte inferior */
 footer {
@@ -183,6 +196,72 @@ footer {
 
 .social-media a:hover {
     transform: scale(1.2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #20232a;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1100; /* Mayor que el header y el video */
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: #333333;
+}
+
+.content-container {
+    background-color: white;
+    border-radius: 40px 40px 0 0; /* Bordes redondeados arriba */
+    padding: 60px 40px;
+    margin-top: -100px; /* Superposición al fondo */
+    box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: relative;
+    z-index: 10;
+}
+
+.content-container .content {
+    text-align: center;
+}
+
+.content-container h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.content-container p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.content-container button {
+    background-color: #ff7a59;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.content-container button:hover {
+    background-color: #ff5a3c;
 }
 
 <script>

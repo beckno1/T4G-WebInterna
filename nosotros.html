@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Think4good</title>
     <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <header>
@@ -36,10 +37,8 @@
         </nav>
     </header>
 
-    <body>
-
     <!-- Encabezado con video -->
-    <section class="hero-nosotros">
+    <section class="hero-nosotros video-container">
         <video autoplay muted loop>
             <source src="ruta-del-video.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
@@ -50,32 +49,32 @@
         </div>
     </section>
 
-    <!-- Nuestra Historia -->
-    <section class="historia">
+    <!-- Historia con animación -->
+    <section class="historia" id="historia">
         <h2>Nuestra Historia</h2>
         <p>En <strong>Think4good</strong>, llevamos años transformando ideas en soluciones tecnológicas personalizadas. Nos enfocamos en la eficiencia, el crecimiento y la innovación para impulsar el éxito de nuestros clientes.</p>
     </section>
 
-    <!-- Misión, Visión y Valores -->
+    <!-- Misión, Visión y Valores interactivos -->
     <section class="mision-vision-valores">
-        <div class="mvv-item">
+        <div class="mvv-item" data-sr-id="1">
             <i class="fas fa-bullseye"></i>
             <h3>Misión</h3>
             <p>Ofrecer soluciones tecnológicas innovadoras que generen impacto y valor real.</p>
         </div>
-        <div class="mvv-item">
+        <div class="mvv-item" data-sr-id="2">
             <i class="fas fa-eye"></i>
             <h3>Visión</h3>
             <p>Ser referentes en el sector TI a través de la excelencia y el compromiso.</p>
         </div>
-        <div class="mvv-item">
+        <div class="mvv-item" data-sr-id="3">
             <i class="fas fa-handshake"></i>
             <h3>Valores</h3>
             <p>Innovación, integridad, trabajo en equipo y orientación al cliente.</p>
         </div>
     </section>
 
-    <!-- Equipo -->
+    <!-- Equipo con hover interactivo -->
     <section class="equipo">
         <h2>Conoce a Nuestro Equipo</h2>
         <div class="equipo-grid">
@@ -97,7 +96,7 @@
         </div>
     </section>
 
-    <!-- Tecnologías -->
+    <!-- Tecnologías con animación -->
     <section class="tecnologias">
         <h2>Trabajamos con Tecnologías de Vanguardia</h2>
         <div class="tech-logos">
@@ -108,15 +107,13 @@
         </div>
     </section>
 
-    <!-- Llamado a la acción -->
+    <!-- CTA -->
     <section class="cta-nosotros">
         <h2>¿Quieres ser parte de nuestro equipo?</h2>
         <a href="contacto.html" class="btn-cta">Contáctanos</a>
     </section>
 
-</body>
-
-     <footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-links" style="text-align: left;">
                 <a href="politica-privacidad.html">Política de Privacidad</a>
@@ -135,5 +132,11 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        ScrollReveal().reveal('.mvv-item', { interval: 200, distance: '50px', origin: 'bottom', duration: 1000 });
+        ScrollReveal().reveal('.miembro', { interval: 300, distance: '50px', origin: 'left', duration: 1000 });
+        ScrollReveal().reveal('.tech-logos img', { interval: 150, distance: '20px', origin: 'top', duration: 800 });
+    </script>
 </body>
 </html>

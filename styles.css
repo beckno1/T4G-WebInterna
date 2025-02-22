@@ -533,3 +533,124 @@ form button:hover {
         width: 140px;
     }
 }
+
+/* 🌟 NUEVA SECCIÓN: Nosotros */
+.nosotros-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.nosotros-section h2 {
+    font-size: 2.8rem;
+    color: #1a202c;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.5s ease-in-out;
+}
+
+.nosotros-section p {
+    max-width: 800px;
+    line-height: 1.8;
+    color: #4a5568;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards animadas */
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+.team-card {
+    background-color: #f9fafb;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    color: #1a202c;
+    margin: 15px 0 5px;
+}
+
+.team-card p {
+    color: #4a5568;
+    padding-bottom: 20px;
+}
+
+/* 🌈 Animación de entrada */
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 💡 Mejoras responsive */
+@media (max-width: 768px) {
+    .nosotros-section h2 {
+        font-size: 2rem;
+    }
+
+    .nosotros-section p {
+        font-size: 1rem;
+    }
+
+    .team-card img {
+        height: 200px;
+    }
+}
+
+/* 🔝 Botón de regreso arriba */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #61dafb;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* 🎬 Animación para mostrar el botón */
+.show-button {
+    display: block;
+    animation: fadeInUp 0.5s ease-in-out;
+}

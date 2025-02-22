@@ -108,48 +108,53 @@ form button:hover {
 
 /* Footer (igual que styles.css) */
 footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(51, 51, 51, 0.8);
+    background-color: #333333;
     color: white;
-    margin-top: 20px;
-    position: relative;
-}
-
-.social-media {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    padding: 20px;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.social-icon img {
-    width: 40px;
-    height: 40px;
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Enlaces alineados a la izquierda */
+.footer-links {
+    text-align: left;
+    flex: 1;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+/* Texto centrado */
+.footer-center {
+    text-align: center;
+    flex: 1;
+}
+
+/* Redes sociales alineadas a la derecha */
+/* Redes sociales alineadas a la derecha y más grandes */
+.social-media {
+    text-align: right;
+    flex: 1;
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px; /* Tamaño aumentado */
+    margin-left: 15px;
     transition: transform 0.3s ease;
-    border-radius: 50%;
 }
 
-.social-icon img:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .social-media {
-        position: static;
-        margin-top: 10px;
-        justify-content: center;
-    }
-
-    #contacto {
-        width: 90%;
-    }
+.social-media a:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
 }

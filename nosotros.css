@@ -42,37 +42,57 @@ nav a:hover {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
+    background-color: #333333;
     color: white;
-    margin-top: 20px;
-    position: relative;
-}
-
-/* Redes Sociales en el Footer */
-.social-media {
-    position: absolute;
-    right: 20px; /* Alineado al extremo derecho */
-    top: 50%;
-    transform: translateY(-50%);
+    padding: 20px;
     display: flex;
-    gap: 20px; /* Espaciado entre los íconos */
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.social-icon img {
-    width: 40px; /* Tamaño del ícono */
-    height: 40px;
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Enlaces alineados a la izquierda */
+.footer-links {
+    text-align: left;
+    flex: 1;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+/* Texto centrado */
+.footer-center {
+    text-align: center;
+    flex: 1;
+}
+
+/* Redes sociales alineadas a la derecha */
+/* Redes sociales alineadas a la derecha y más grandes */
+.social-media {
+    text-align: right;
+    flex: 1;
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px; /* Tamaño aumentado */
+    margin-left: 15px;
     transition: transform 0.3s ease;
-    border-radius: 50%; /* Hace los íconos redondos */
-    padding: 0; /* Elimina el padding */
-    background-color: transparent; /* Fondo transparente */
-    border: none; /* Elimina cualquier borde */
 }
 
-.social-icon img:hover {
-    transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el ratón */
+.social-media a:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
 }
+
 
 /* Media Queries */
 @media (max-width: 768px) {

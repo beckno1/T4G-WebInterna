@@ -39,33 +39,41 @@
 
     <!-- Encabezado con video -->
  <!-- HTML + CSS para la sección Nosotros (Estilo Profesional y Novedoso) - Actualizado a 5 columnas -->
+<!-- HTML + CSS para la sección Nosotros con contenido en cuadrados -->
 <section class="nosotros-section">
-    <h2>Nuestra Historia</h2>
-    <p>En <strong>Think4good</strong>, llevamos años transformando ideas en soluciones tecnológicas personalizadas. Nos enfocamos en la eficiencia, el crecimiento y la innovación para impulsar el éxito de nuestros clientes.</p>
-
-    <h2>🌟 Misión</h2>
-    <p>Ofrecer soluciones tecnológicas innovadoras que generen impacto y valor real.</p>
-
-    <h2>🚀 Visión</h2>
-    <p>Ser referentes en el sector TI a través de la excelencia y el compromiso.</p>
-
-    <h2>💡 Valores</h2>
-    <p>Innovación, integridad, trabajo en equipo y orientación al cliente.</p>
-
-    <h2>👨‍💻 Conoce a Nuestro Equipo</h2>
+    <h2>📖 Nuestra Historia</h2>
+    <div class="info-cards">
+        <div class="info-card">
+            <h3>📖 Historia</h3>
+            <p>En <strong>Think4good</strong>, llevamos años transformando ideas en soluciones tecnológicas personalizadas. Nuestro camino ha estado lleno de desafíos y logros, lo que nos ha permitido convertirnos en una empresa confiable en el sector. Creemos en la innovación como motor de cambio.</p>
+        </div>
+        <div class="info-card">
+            <h3>🌟 Misión</h3>
+            <p>Ofrecer soluciones tecnológicas innovadoras que generen impacto y valor real. Nos comprometemos a entender las necesidades de cada cliente, proporcionando estrategias tecnológicas que mejoren su rendimiento, aumenten su competitividad y potencien su crecimiento sostenible en el mercado.</p>
+        </div>
+        <div class="info-card">
+            <h3>🚀 Visión</h3>
+            <p>Ser referentes en el sector TI a través de la excelencia y el compromiso. Aspiramos a ser la primera opción para las empresas que buscan un socio tecnológico confiable, destacando por nuestra capacidad de adaptarnos a un entorno en constante cambio y por ofrecer soluciones que transformen negocios.</p>
+        </div>
+        <div class="info-card">
+            <h3>💡 Valores</h3>
+            <p>Innovación, integridad, trabajo en equipo y orientación al cliente. Valoramos el desarrollo continuo, fomentamos un entorno de trabajo colaborativo y ético, y colocamos a nuestros clientes en el centro de cada decisión. Nuestra cultura se basa en la transparencia, el respeto y el compromiso con la excelencia.</p>
+        </div>
+    </div>
+<h2>👨‍💻 Conoce a Nuestro Equipo</h2>
     <div class="team-cards">
         <div class="team-card">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/maria.jpg?v=1740225466880" alt="Laura Martínez">
+            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/laura.jpg?v=1740225522897" alt="Laura Martínez">
             <h3>Laura Martínez</h3>
             <p>CEO & Fundadora</p>
         </div>
         <div class="team-card">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/b.jpg?v=1740225530637g" alt="Carlos Pérez">
+            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/b.jpg?v=1740225530637" alt="Carlos Pérez">
             <h3>Carlos Pérez</h3>
             <p>Director de Tecnología</p>
         </div>
         <div class="team-card">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/laura.jpg?v=1740225522897" alt="Ana Rodríguez">
+            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/maria.jpg?v=1740225466880" alt="Ana Rodríguez">
             <h3>Ana Rodríguez</h3>
             <p>Analista de Datos</p>
         </div>
@@ -78,12 +86,12 @@
 </section>
 
 <style>
-/* Estilo Profesional y Novedoso para la sección Nosotros - Animaciones y colores personalizados */
+/* Estilo Profesional en Cuadrados */
 .nosotros-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 70px 25px;
+    padding: 80px 20px;
     background: linear-gradient(135deg, #f5f7fa, #e2e8f0);
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -92,25 +100,49 @@
 .nosotros-section h2 {
     font-size: 2.5rem;
     color: #2d3748;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-bottom: 3px solid #3182ce;
     padding-bottom: 10px;
-    animation: fadeInDown 1s ease-in-out, colorChange 5s infinite;
 }
 
-.nosotros-section p {
-    max-width: 750px;
-    line-height: 1.8;
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 280px;
+}
+
+.info-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    font-size: 1.6rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.info-card p {
     color: #4a5568;
+    line-height: 1.8;
     font-size: 1.1rem;
-    animation: fadeInUp 1s ease-in-out;
 }
 
 .team-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
-    margin-top: 50px;
     width: 100%;
 }
 
@@ -120,19 +152,12 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 0.8s ease-in-out;
     text-align: center;
-    transform-origin: center;
-}
-
-.team-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 
 .team-card img {
     width: 100%;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
     filter: grayscale(100%) brightness(90%);
     transition: filter 0.3s ease, transform 0.3s ease;
@@ -154,44 +179,13 @@
     padding-bottom: 20px;
 }
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes colorChange {
-    0% { color: #2d3748; }
-    50% { color: #3182ce; }
-    100% { color: #2d3748; }
-}
-
-@media (max-width: 1024px) {
-    .team-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     .nosotros-section h2 {
         font-size: 2rem;
     }
 
-    .nosotros-section p {
+    .info-card p, .team-card p {
         font-size: 1rem;
-    }
-
-    .team-cards {
-        grid-template-columns: 1fr;
     }
 
     .team-card img {
@@ -199,6 +193,7 @@
     }
 }
 </style>
+
 
     <footer>
         <div class="footer-content">

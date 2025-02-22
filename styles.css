@@ -8,9 +8,9 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Header */
+/* Header Mejorado */
 header {
-    background: #222222;
+    background: rgba(34, 34, 34, 0.9);
     color: white;
     padding: 15px 20px;
     display: flex;
@@ -21,10 +21,16 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: background 0.3s;
 }
 
 .logo-container img {
     max-height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
 }
 
 nav .nav-links {
@@ -44,6 +50,45 @@ nav a {
 nav a:hover {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
+}
+
+/* Menú de Servicios con Animación */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333333;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: #8c9194;
+    color: white;
 }
 
 /* Video Background */
@@ -113,29 +158,31 @@ nav a:hover {
 /* Animación de deslizamiento en Servicios */
 .servicios {
     display: flex;
-    overflow: hidden;
-    white-space: nowrap;
+    overflow-x: auto;
     gap: 20px;
     padding: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 
 .servicio-item {
     display: inline-block;
     width: 250px;
     padding: 15px;
-    background: #fff;
+    background: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
+    scroll-snap-align: center;
 }
 
 .servicio-item:hover {
-    transform: translateX(10px);
+    transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-    background: #222;
+    background: #222222;
     color: white;
     padding: 20px;
     display: flex;

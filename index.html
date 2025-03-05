@@ -182,6 +182,12 @@
         texts[currentIndex].classList.add("active");
         setInterval(changeText, 4000);
     });
+
+document.querySelectorAll('.dropdown-content a').forEach(link => {
+    link.addEventListener('click', (event) => {
+        console.log("Clic en:", event.target.href);
+    });
+});
     </script>
 </body>
 </html>

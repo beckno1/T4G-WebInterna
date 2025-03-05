@@ -290,9 +290,14 @@ footer {
     transform: scale(1.2);
 }
 
+.dropdown {
+    position: relative;
+}
+
 /* Dropdown mejorado */
 .dropdown-content {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     background-color: #20232a;
     min-width: 200px;
@@ -300,10 +305,12 @@ footer {
     z-index: 1100;
     padding: 10px 0;
     border-radius: 8px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .dropdown-content li a {

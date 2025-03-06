@@ -3,10 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Think4good</title>
+    <title>Software a Medida - Think4good</title>
     <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        .tooltip.visible {
+            display: block;
+        }
+        .btn-contacto {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #2181a9;
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-contacto:hover {
+            background-color: #38a169;
+        }
+        .software-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #fdfbfb, #ebedee);
+            font-family: 'Roboto', sans-serif;
+        }
+        .software-section h2 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2181a9;
+            display: inline-block;
+            padding-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+        .contenido-software {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .texto-software {
+            flex: 1;
+            min-width: 320px;
+            text-align: left;
+            padding-left: 40px;
+        }
+        .imagen-software {
+            flex: 1;
+            min-width: 300px;
+            text-align: right;
+        }
+        .imagen-software img {
+            max-width: 100%;
+            height: auto;
+            max-height: 550px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateX(-100px);
+        }
+        .beneficios, .proceso-trabajo {
+            margin-bottom: 30px;
+        }
+        .beneficios ul, .proceso-trabajo .info-cards {
+            list-style: none;
+            padding: 0;
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        .beneficios h3, .proceso-trabajo h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .cta h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .contenido-software {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .texto-software {
+                text-align: center;
+                padding-left: 0;
+            }
+            .imagen-software {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,7 +133,7 @@
                         <li><a href="testing.html">QA Testing</a></li>
                         <li><a href="#">Help Desk</a></li>
                         <li><a href="softwareamedida.html">Software a Medida</a></li>
-                        <li><a href="#">Software Factory</a></li>
+                        <li><a href="diseñoweb.html">Diseño y Desarrollo Web</a></li>
                         <li><a href="marketing.html">Marketing Digital</a></li>
                     </ul>
                 </li>
@@ -35,149 +143,46 @@
             </ul>
         </nav>
     </header>
-
-<!-- HTML + CSS para softwareamedida.html manteniendo coherencia visual con marketing.html, consultoría.html y proyectos.html -->
-<section class="software-section">
-    <h2>Software a Medida para tu Negocio</h2>
-
-    <div class="contenido-software">
-        <div class="texto-software">
-            <div class="beneficios">
-                <h3>¿Por Qué Elegirnos?</h3>
-                <ul>
-                    <li>💡 Desarrollo completamente personalizado según tus necesidades.</li>
-                    <li>⚙️ Integración fluida con tus procesos empresariales existentes.</li>
-                    <li>🚀 Soluciones escalables y seguras para el crecimiento sostenido.</li>
-                </ul>
+    
+    <section class="software-section">
+        <h2>Software a Medida para tu Negocio</h2>
+        <div class="contenido-software">
+            <div class="texto-software">
+                <div class="beneficios">
+                    <h3>¿Por Qué Elegirnos?</h3>
+                    <ul>
+                        <li>💡 Desarrollo completamente personalizado según tus necesidades.</li>
+                        <li>⚙️ Integración fluida con tus procesos empresariales existentes.</li>
+                        <li>🚀 Soluciones escalables y seguras para el crecimiento sostenido.</li>
+                    </ul>
+                </div>
+                <div class="proceso-trabajo">
+                    <h3>Proceso de Desarrollo</h3>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4 onmouseover="showTooltip(this, 'Entendemos tus necesidades y objetivos.')" onclick="showTooltip(this, 'Entendemos tus necesidades y objetivos.')" onmouseout="hideTooltip(this)">🧩 Análisis de Requerimientos</h4>
+                            <div class="tooltip"></div>
+                        </div>
+                        <div class="info-card">
+                            <h4 onmouseover="showTooltip(this, 'Creamos soluciones eficientes y personalizadas.')" onclick="showTooltip(this, 'Creamos soluciones eficientes y personalizadas.')" onmouseout="hideTooltip(this)">🛠️ Diseño y Desarrollo</h4>
+                            <div class="tooltip"></div>
+                        </div>
+                        <div class="info-card">
+                            <h4 onmouseover="showTooltip(this, 'Garantizamos el rendimiento y la calidad antes del lanzamiento.')" onclick="showTooltip(this, 'Garantizamos el rendimiento y la calidad antes del lanzamiento.')" onmouseout="hideTooltip(this)">🔄 Pruebas y Optimización</h4>
+                            <div class="tooltip"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta">
+                    <h3>¿Quieres un software que impulse tu negocio?</h3>
+                    <a href="contacto.html" class="btn-contacto">¡Hablemos!</a>
+                </div>
             </div>
-
-            <div class="proceso-trabajo">
-                <h3>Proceso de Desarrollo</h3>
-                <ol>
-                    <li>🧩 <strong>Análisis de Requerimientos</strong>: Entendemos tus necesidades y objetivos.</li>
-                    <li>🛠️ <strong>Diseño y Desarrollo</strong>: Creamos soluciones eficientes y personalizadas.</li>
-                    <li>🔄 <strong>Pruebas y Optimización</strong>: Garantizamos el rendimiento y la calidad antes del lanzamiento.</li>
-                </ol>
-            </div>
-
-            <div class="cta">
-                <h3>¿Quieres un software que impulse tu negocio?</h3>
-                <a href="contacto.html" class="btn-contacto">¡Trabajemos juntos!</a>
+            <div class="imagen-software">
+                <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/Software%20a%20Medida%20para%20tu%20Negocio%20(1).png?v=1741288322452" alt="Imagen Software a Medida">
             </div>
         </div>
-
-        <div class="imagen-software">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/desarrollo-de-software-bogota-800x534-1.jpg?v=1740231492632" alt="Imagen Software a Medida">
-        </div>
-    </div>
-</section>
-
-<style>
-/* Estilo para softwareamedida.html manteniendo coherencia visual */
-.software-section {
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
-    font-family: 'Roboto', sans-serif;
-}
-
-.software-section h2 {
-    font-size: 2.5rem;
-    color: #2d3748;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #48bb78;
-    display: inline-block;
-    padding-bottom: 10px;
-    animation: fadeInDown 1s ease;
-}
-
-.contenido-software {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
-.texto-software {
-    flex: 1;
-    min-width: 320px;
-    text-align: left;
-    padding-left: 40px;
-}
-
-.imagen-software {
-    flex: 1;
-    min-width: 300px;
-    text-align: right;
-}
-
-.imagen-software img {
-    max-width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.beneficios, .proceso-trabajo {
-    margin-bottom: 30px;
-}
-
-.beneficios ul, .proceso-trabajo ol {
-    list-style: none;
-    padding: 0;
-    font-size: 1rem;
-    color: #4a5568;
-    line-height: 1.8;
-}
-
-.beneficios h3, .proceso-trabajo h3 {
-    color: #2d3748;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.cta h3 {
-    font-size: 1.5rem;
-    color: #2d3748;
-    margin-bottom: 20px;
-}
-
-.btn-contacto {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #48bb78;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn-contacto:hover {
-    background-color: #38a169;
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-    .contenido-software {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .texto-software {
-        text-align: center;
-        padding-left: 0;
-    }
-
-    .imagen-software {
-        text-align: center;
-    }
-}
-</style>
+    </section>
 
 
     <footer>
@@ -199,5 +204,21 @@
             </div>
         </div>
     </footer>
+  
+  <script>
+    function showTooltip(element, text) {
+        let tooltip = element.nextElementSibling;
+        tooltip.textContent = text;
+        tooltip.classList.add('visible');
+        let rect = element.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+    }
+
+    function hideTooltip(element) {
+        let tooltip = element.nextElementSibling;
+        tooltip.classList.remove('visible');
+    }
+</script>
 </body>
 </html>

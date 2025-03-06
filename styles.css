@@ -354,19 +354,7 @@ footer {
 }
 
 /* 💎 Contenedor centrado y moderno con colores formales */
-.contacto-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 30px; /* 🆕 Más espacio arriba y abajo */
-    max-width: 800px;
-    margin: 70px auto; /* 🆕 Espacio superior e inferior entre header y footer */
-    background: #f9fafb; /* Gris muy claro */
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    position: relative;
-}
+
 
 /* 🖼️ Imagen responsive y centrada */
 .contacto-imagen {
@@ -420,20 +408,7 @@ form button:hover {
     transform: translateY(-3px);
 }
 
-/* 💎 Borde animado con tonos formales */
-.contacto-container::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 22px;
-    background: linear-gradient(45deg, #1f2937, #1e40af, #4b5563);
-    background-size: 400% 400%;
-    animation: shineBorder 8s infinite linear;
-    z-index: -1;
-}
+
 
 @keyframes shineBorder {
     0% { background-position: 0% 50%; }
@@ -452,21 +427,13 @@ form button:hover {
         font-size: 1rem;
     }
 
-    .contacto-container {
-        padding: 50px 20px;
-        margin: 50px auto;
-    }
+    
 
     form input, form textarea {
         font-size: 0.9rem;
     }
 }
 
-/* 🎨 Sombra interactiva en el formulario con tono formal */
-.contacto-container:hover {
-    box-shadow: 0 0 50px rgba(31, 41, 55, 0.3);
-    transition: box-shadow 0.5s ease;
-}
 
 .clients-section {
     position: relative;

@@ -42,6 +42,7 @@
             Tu navegador no soporta video HTML5.
         </video>
         
+        <div class="contacto-container">
             <form class="contact-form" id="contactForm">
                 <h2>¡Ponte en contacto con nosotros!</h2>
                 <input type="text" name="nombre" placeholder="Tu Nombre" required>
@@ -62,6 +63,7 @@
             padding: 80px 20px;
             font-family: 'Roboto', sans-serif;
             text-align: center;
+            z-index: 2; /* Asegura que esté por encima del video */
         }
 
         #bgvideo {
@@ -71,10 +73,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 0;
+            z-index: 1; /* Coloca el video detrás del formulario */
         }
 
-        
+        .contacto-container {
+            position: relative;
+            z-index: 3; /* Asegura que el formulario esté por encima del video */
+        }
 
         .contact-form {
             background-color: rgba(255, 255, 255, 0.8); /* Ajustado para quitar el cuadro azul */

@@ -356,59 +356,6 @@ footer {
 /* 💎 Contenedor centrado y moderno con colores formales */
 
 
-/* 🖼️ Imagen responsive y centrada */
-.contacto-imagen {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contacto-imagen:hover {
-    transform: scale(1.03);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* 📝 Formulario estilizado con colores formales */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #9ca3af; /* Gris medio */
-    font-size: 1rem;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-form input:focus, form textarea:focus {
-    box-shadow: 0 0 15px rgba(31, 41, 55, 0.6); /* Azulino oscuro */
-    border-color: #1f2937;
-}
-
-form button {
-    padding: 15px;
-    border-radius: 10px;
-    border: none;
-    background: #1e40af; /* Azulino oscuro */
-    color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-form button:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(-3px);
-}
-
-
 
 @keyframes shineBorder {
     0% { background-position: 0% 50%; }

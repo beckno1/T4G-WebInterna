@@ -10,35 +10,29 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <style>
         .tooltip {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            display: none;
-            white-space: nowrap;
-            z-index: 10;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-        .tooltip.visible {
-            display: block;
-            opacity: 1;
-        }
-        .btn-contacto {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .btn-contacto:hover {
-            background-color: #0056b3;
-        }
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        display: none;
+        white-space: nowrap;
+        z-index: 10;
+        top: 100%; /* Aparece debajo del elemento */
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 5px; /* Espaciado opcional */
+    }
+
+    .tooltip.visible {
+        display: block;
+    }
+
+    .info-card {
+        position: relative; /* Necesario para posicionar el tooltip dentro */
+        display: inline-block;
+    }
     </style>
 </head>
 <body>
@@ -47,7 +41,7 @@
             <a href="index.html"><img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/logo.png?v=1736294773449" alt="Think4good Logo"></a>
         </div>
         <nav>
-           <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
                     <a href="servicios.html" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
@@ -68,7 +62,7 @@
             </ul>
         </nav>
     </header>
-
+    
     <section class="consultoria-section">
         <h2>Consultoría TI & Procesos</h2>
         <div class="contenido-consultoria">
@@ -88,10 +82,12 @@
                             <h3 onmouseover="showTooltip(this, 'Revisión de procesos y recursos.')" onclick="showTooltip(this, 'Revisión de procesos y recursos.')" onmouseout="hideTooltip(this)">🔍 Evaluación Inicial</h3>
                             <div class="tooltip"></div>
                         </div>
+<br>
                         <div class="info-card">
                             <h3 onmouseover="showTooltip(this, 'Propuesta de soluciones a medida.')" onclick="showTooltip(this, 'Propuesta de soluciones a medida.')" onmouseout="hideTooltip(this)">💬 Planificación Estratégica</h3>
                             <div class="tooltip"></div>
                         </div>
+<br>
                         <div class="info-card">
                             <h3 onmouseover="showTooltip(this, 'Acompañamiento integral en cada etapa.')" onclick="showTooltip(this, 'Acompañamiento integral en cada etapa.')" onmouseout="hideTooltip(this)">⚙️ Implementación y Soporte</h3>
                             <div class="tooltip"></div>
@@ -108,18 +104,18 @@
             </div>
         </div>
     </section>
-
+    
     <footer>
         <div class="footer-content">
-            <div class="footer-links" style="text-align: left;">
+            <div class="footer-links">
                 <a href="politica-privacidad.html">Política de Privacidad</a>
                 <a href="terminos-condiciones.html">Términos y Condiciones</a>
                 <a href="contacto.html">Contacto</a>
             </div>
-            <div class="footer-center" style="text-align: center;">
+            <div class="footer-center">
                 <p>&copy; 2021 Think4good. Todos los derechos reservados.</p>
             </div>
-            <div class="social-media" style="text-align: right;">
+            <div class="social-media">
                 <a href="https://www.facebook.com/t4gthinkforgood" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@t4g_pe" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="https://www.instagram.com/t4g_pe" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -128,33 +124,18 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
-        function showTooltip(element, text) {
-            const tooltip = element.nextElementSibling;
-            tooltip.textContent = text;
-            tooltip.classList.add("visible");
+    function showTooltip(element, text) {
+        const tooltip = element.nextElementSibling;
+        tooltip.textContent = text;
+        tooltip.classList.add("visible");
+    }
 
-            const rect = element.getBoundingClientRect();
-            const tooltipRect = tooltip.getBoundingClientRect();
-
-            if (window.innerWidth - rect.left < tooltipRect.width) {
-                tooltip.style.left = (rect.left - tooltipRect.width) + "px";
-            } else {
-                tooltip.style.left = rect.left + "px";
-            }
-
-            if (window.innerHeight - rect.bottom < tooltipRect.height) {
-                tooltip.style.top = (rect.top - tooltipRect.height) + "px";
-            } else {
-                tooltip.style.top = rect.bottom + "px";
-            }
-        }
-
-        function hideTooltip(element) {
-            const tooltip = element.nextElementSibling;
-            tooltip.classList.remove("visible");
-        }
-    </script>
+    function hideTooltip(element) {
+        const tooltip = element.nextElementSibling;
+        tooltip.classList.remove("visible");
+    }
+</script>
 </body>
 </html>

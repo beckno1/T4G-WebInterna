@@ -98,9 +98,12 @@ nav {
 .hero-content {
     position: relative;
     max-width: 600px;
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 20px; /* Espacio alrededor del contenido */
+    text-align: center; /* Centra el texto */
     z-index: 2;
-    animation: fadeIn 2s ease-in-out;
 }
+
 
 .hero-slider p {
     opacity: 0;

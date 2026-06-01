@@ -1,221 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staffing TI - Think4good</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <style>
-        .tooltip {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            display: none;
-            white-space: nowrap;
-            z-index: 10;
-        }
-        .tooltip.visible {
-            display: block;
-        }
-        .btn-contacto {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #2181a9;
-            color: #fff;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .btn-contacto:hover {
-            background-color: #38a169;
-        }
-        .staffing-section {
-            padding: 80px 40px;
-            background: linear-gradient(135deg, #fdfbfb, #ebedee);
-            font-family: 'Roboto', sans-serif;
-        }
-        .staffing-section h2 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #2181a9;
-            display: inline-block;
-            padding-bottom: 10px;
-            animation: fadeInDown 1s ease;
-        }
-        .contenido-staffing {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-        .texto-staffing {
-            flex: 1;
-            min-width: 320px;
-            text-align: left;
-            padding-left: 40px;
-        }
-        .imagen-staffing {
-            flex: 0;
-            min-width: 600px;
-            text-align: right;
-        }
-        .imagen-staffing img {
-    max-width: 100%;
-    height: 120%;
-    max-height: 550px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100px); /* Ajusta el valor según sea necesario */
-}
-        .beneficios, .proceso-trabajo {
-            margin-bottom: 30px;
-        }
-        .beneficios ul, .proceso-trabajo .info-cards {
-            list-style: none;
-            padding: 0;
-            font-size: 1rem;
-            color: #4a5568;
-            line-height: 1.8;
-        }
-        .beneficios h3, .proceso-trabajo h3 {
-            color: #2d3748;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        .cta h3 {
-            font-size: 1.5rem;
-            color: #2d3748;
-            margin-bottom: 20px;
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) {
-            .contenido-staffing {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .texto-staffing {
-                text-align: center;
-                padding-left: 0;
-            }
-            .imagen-staffing {
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staffing TI - Think4Good</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <header>
-        <div class="logo-container">
-            <a href="index.html"><img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/logo.png?v=1736294773449" alt="Think4good Logo"></a>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="servicios.html" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="staffingti.html">Staffing TI</a></li>
-                        <li><a href="consultoria.html">Consultoría TI</a></li>
-                        <li><a href="proyectos.html">Proyectos TI</a></li>
-                        <li><a href="testing.html">QA Testing</a></li>
-                        <li><a href="statement.html">Statements</a></li>
-                        <li><a href="softwareamedida.html">Software a Medida</a></li>
-                        <li><a href="diseñoweb.html">Diseño y Desarrollo Web</a></li>
-                        <li><a href="marketing.html">Marketing Digital</a></li>
-                    </ul>
-                </li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="testimonios.html">Testimonios</a></li>
-                <li><a href="contacto.html" class="contact-btn">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="staffing-section">
-        <h2>Staffing TI</h2>
-        <div class="contenido-staffing">
-            <div class="texto-staffing">
-                <div class="beneficios">
-                    <h3>Beneficios Clave</h3>
-                    <ul>
-                        <li>🔍 Selección de talento altamente calificado.</li>
-                        <li>🚀 Integración ágil y eficiente en tu equipo.</li>
-                        <li>🔒 Soporte continuo para garantizar éxito en cada proyecto.</li>
-                    </ul>
-                </div>
-                <div class="proceso-trabajo">
-                    <h3>Nuestro Proceso</h3>
-                    <div class="info-cards">
-                        <div class="info-card">
-                            <h4 onmouseover="showTooltip(this, 'Definición de perfiles y necesidades.')" onclick="showTooltip(this, 'Definición de perfiles y necesidades.')" onmouseout="hideTooltip(this)">📝 Análisis de Requerimientos</h4>
-                            <div class="tooltip"></div>
-                        </div>
-                        <div class="info-card">
-                            <h4 onmouseover="showTooltip(this, 'Búsqueda y selección del mejor talento.')" onclick="showTooltip(this, 'Búsqueda y selección del mejor talento.')" onmouseout="hideTooltip(this)">🔎 Proceso de Selección</h4>
-                            <div class="tooltip"></div>
-                        </div>
-                        <div class="info-card">
-                            <h4 onmouseover="showTooltip(this, 'Seguimiento y soporte continuo.')" onclick="showTooltip(this, 'Seguimiento y soporte continuo.')" onmouseout="hideTooltip(this)">🤝 Acompañamiento y Gestión</h4>
-                            <div class="tooltip"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cta">
-                    <h3>¿Buscas el mejor talento TI?</h3>
-                    <a href="contacto.html" class="btn-contacto">¡Hablemos!</a>
-                </div>
-            </div>
-            <div class="imagen-staffing">
-                <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/staffing.png?v=1741282689546" alt="Imagen Staffing TI">
-            </div>
-        </div>
-    </section>
-<footer>
-        <div class="footer-content">
-            <div class="footer-links" style="text-align: left;">
-                <a href="politica.html">Política de Privacidad</a>
-                <a href="terminosycondiciones.html">Términos y Condiciones</a>
-                <a href="contacto.html">Contacto</a>
-            </div>
-            <div class="footer-center" style="text-align: center;">
-                <p>&copy; 2021 Think4good. Todos los derechos reservados.</p>
-            </div>
-            <div class="social-media" style="text-align: right;">
-                <a href="https://www.facebook.com/t4gthinkforgood" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@t4g_pe" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/t4g_pe" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/think4good" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/51982841022" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-    </footer>
-  <script>
-    function showTooltip(element, text) {
-        let tooltip = element.nextElementSibling;
-        tooltip.textContent = text;
-        tooltip.classList.add('visible');
-        let rect = element.getBoundingClientRect();
-        tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
-    }
 
-    function hideTooltip(element) {
-        let tooltip = element.nextElementSibling;
-        tooltip.classList.remove('visible');
-    }
-</script>
+  <header role="banner">
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html" class="nav-logo"><img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain"></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Servicios <i class="fas fa-chevron-down"></i></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="staffingti.html">Staffing TI</a></li>
+            <li><a href="consultoria.html">Consultoría TI</a></li>
+            <li><a href="testing.html">QA Testing</a></li>
+            <li><a href="statement.html">Statements</a></li>
+            <li><a href="softwareamedida.html">Software a Medida</a></li>
+          </ul>
+        </li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      </ul>
+      <a href="contacto.html" class="nav-cta">Contáctanos</a>
+      <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav id="nav-mobile" class="nav-mobile">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="testimonios.html">Testimonios</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html" class="nav-mobile-cta">Contáctanos</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="eyebrow">Staffing TI</p>
+    <h1>El talento tecnológico<br>que tu equipo necesita</h1>
+    <p class="hero-desc">Seleccionamos y conectamos a los profesionales TI más calificados con tu empresa, asegurando una integración ágil y un acompañamiento continuo para el éxito de cada proyecto.</p>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="section-dark">
+    <div class="section-inner">
+      <h2 class="section-title">Beneficios clave</h2>
+      <div class="feature-cards-grid">
+        <div class="feature-card">
+          <div class="feature-card-icon"><i class="fas fa-search"></i></div>
+          <h3>Selección de talento altamente calificado</h3>
+          <p>Contamos con una red de profesionales TI evaluados técnica y culturalmente. Encontramos el perfil exacto que tu proyecto requiere, en el tiempo que lo necesitás.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Integración ágil y eficiente</h3>
+          <p>Nuestros profesionales se incorporan rápidamente a tu equipo y flujos de trabajo, minimizando los tiempos de onboarding y maximizando la productividad desde el primer día.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon"><i class="fas fa-lock"></i></div>
+          <h3>Soporte continuo para cada proyecto</h3>
+          <p>No solo conectamos talento: hacemos seguimiento activo para garantizar que la relación entre el profesional y tu empresa funcione de manera óptima y sostenida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section-light">
+    <div class="section-inner">
+      <h2 class="section-title-dark">Nuestro proceso</h2>
+      <p class="section-subtitle-dark">Un proceso riguroso que asegura el match perfecto entre talento y empresa.</p>
+      <ol class="steps-list">
+        <li class="step-item">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <h3>Análisis de Requerimientos</h3>
+            <p>Definimos junto a vos los perfiles, habilidades técnicas, experiencia y características culturales que necesitás. Cuanto mejor entendemos tu contexto, mejor es el resultado.</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <h3>Proceso de Selección</h3>
+            <p>Búsqueda, evaluación técnica y entrevistas exhaustivas para identificar al mejor talento disponible. Presentamos una terna de candidatos alineados a tu perfil objetivo.</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <h3>Acompañamiento y Gestión</h3>
+            <p>Seguimiento continuo post-incorporación: monitoreamos la adaptación del profesional, facilitamos la comunicación y resolvemos cualquier situación que surja durante el engagement.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>¿Listo para dar el siguiente paso?</h2>
+    <p>Encontremos juntos el talento TI que tu empresa necesita crecer.</p>
+    <a href="contacto.html" class="btn-lime">Hablemos hoy</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-logo"><img src="logo-degradado.png" alt="Think4Good" height="28" style="display:block;object-fit:contain"></div>
+    <ul class="footer-links">
+      <li><a href="politica.html">Privacidad</a></li>
+      <li><a href="terminosycondiciones.html">Términos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/t4gthinkforgood" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@t4g_pe" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/t4g_pe" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/think4good" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/51982841022" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2022 Think4Good. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.nav-hamburger');
+    const drawer = document.getElementById('nav-mobile');
+    hamburger?.addEventListener('click', () => {
+      const open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      drawer?.classList.toggle('open', !open);
+    });
+    document.addEventListener('click', e => {
+      if (!hamburger?.contains(e.target) && !drawer?.contains(e.target)) {
+        hamburger?.setAttribute('aria-expanded', 'false');
+        drawer?.classList.remove('open');
+      }
+    });
+  </script>
+
 </body>
 </html>

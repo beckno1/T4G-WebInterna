@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup A — Enterprise Authority</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1a2340;
+  --navy-light:#243156;
+  --gold:#D4A847;
+  --gold-light:#E8C86A;
+  --white:#ffffff;
+  --gray-100:#F8F9FB;
+  --gray-200:#E8EBF0;
+  --text-muted:#64748b;
+  --text-body:#374151;
+}
+body{font-family:'Inter',sans-serif;color:var(--text-body);background:var(--gray-100)}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:72px;z-index:100;
+  border-bottom:1px solid rgba(212,168,71,0.2);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);font-size:22px;font-weight:700;
+  letter-spacing:-0.5px;
+}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:0.3px;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{
+  background:var(--gold);color:var(--navy);
+  padding:10px 24px;border-radius:3px;
+  font-size:13px;font-weight:600;text-decoration:none;
+  letter-spacing:0.5px;transition:background .2s;
+}
+.nav-cta:hover{background:var(--gold-light)}
+
+/* HERO */
+.hero{
+  min-height:100vh;background:var(--navy);
+  display:flex;align-items:center;
+  padding:72px 60px 0;
+  position:relative;overflow:hidden;
+}
+.hero-content{max-width:620px;z-index:2}
+.hero-eyebrow{
+  color:var(--gold);font-size:12px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  color:var(--white);font-size:58px;line-height:1.12;
+  font-weight:800;margin-bottom:24px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  color:rgba(255,255,255,0.7);font-size:18px;
+  line-height:1.7;margin-bottom:40px;font-weight:300;
+  max-width:520px;
+}
+.hero-actions{display:flex;gap:16px;align-items:center}
+.btn-primary{
+  background:var(--gold);color:var(--navy);
+  padding:16px 36px;border-radius:3px;
+  font-weight:600;font-size:15px;text-decoration:none;
+  letter-spacing:0.3px;transition:background .2s;
+}
+.btn-primary:hover{background:var(--gold-light)}
+.btn-ghost{
+  color:rgba(255,255,255,0.7);font-size:14px;
+  text-decoration:none;font-weight:500;
+  display:flex;align-items:center;gap:8px;
+  transition:color .2s;
+}
+.btn-ghost:hover{color:var(--gold)}
+.btn-ghost::after{content:'→';font-size:16px}
+
+/* Hero decorative */
+.hero-graphic{
+  position:absolute;right:-40px;top:50%;transform:translateY(-50%);
+  width:580px;height:580px;opacity:0.12;z-index:1;
+}
+.hero-graphic svg{width:100%;height:100%}
+.hero-stats{
+  margin-top:64px;display:flex;gap:48px;
+  padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);
+}
+.stat-item{}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);font-size:36px;font-weight:700;
+}
+.stat-label{color:rgba(255,255,255,0.5);font-size:13px;margin-top:4px}
+
+/* SERVICES */
+.services{
+  padding:100px 60px;background:var(--white);
+}
+.section-label{
+  color:var(--gold);font-size:11px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:40px;font-weight:700;color:var(--navy);
+  margin-bottom:16px;
+}
+.section-sub{
+  color:var(--text-muted);font-size:17px;line-height:1.6;
+  max-width:580px;margin-bottom:60px;
+}
+.services-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+}
+.service-card{
+  background:var(--white);border:1px solid var(--gray-200);
+  padding:32px 28px;
+  border-left:4px solid var(--gold);
+  transition:transform .2s,box-shadow .2s;
+  cursor:default;
+}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,35,64,0.1)}
+.card-icon{
+  color:var(--navy);font-size:22px;margin-bottom:16px;
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  background:rgba(26,35,64,0.06);border-radius:4px;
+}
+.service-card h3{
+  font-size:15px;font-weight:600;color:var(--navy);
+  margin-bottom:8px;line-height:1.3;
+}
+.service-card p{color:var(--text-muted);font-size:13px;line-height:1.6}
+
+/* FOOTER */
+footer{
+  background:var(--navy);padding:48px 60px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(212,168,71,0.2);
+}
+.footer-logo{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);font-size:20px;font-weight:700;
+}
+.footer-links{display:flex;gap:28px;list-style:none}
+.footer-links a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{color:rgba(255,255,255,0.3);font-size:12px}
+
+/* LABEL BADGE */
+.mockup-badge{
+  position:fixed;bottom:20px;right:20px;
+  background:var(--gold);color:var(--navy);
+  padding:8px 16px;border-radius:4px;
+  font-size:12px;font-weight:700;letter-spacing:1px;
+  z-index:999;text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+
+<div class="mockup-badge">A — Enterprise Authority</div>
+
+<nav>
+  <div class="nav-logo">Think4Good</div>
+  <ul class="nav-links">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Nosotros</a></li>
+    <li><a href="#">Testimonios</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contáctanos</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-graphic">
+    <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="200" stroke="white" stroke-width="1"/>
+      <circle cx="250" cy="250" r="150" stroke="white" stroke-width="1"/>
+      <circle cx="250" cy="250" r="100" stroke="white" stroke-width="1"/>
+      <line x1="50" y1="250" x2="450" y2="250" stroke="white" stroke-width="0.5"/>
+      <line x1="250" y1="50" x2="250" y2="450" stroke="white" stroke-width="0.5"/>
+      <circle cx="250" cy="100" r="5" fill="#D4A847"/>
+      <circle cx="380" cy="200" r="5" fill="#D4A847"/>
+      <circle cx="350" cy="360" r="5" fill="#D4A847"/>
+      <circle cx="120" cy="320" r="5" fill="#D4A847"/>
+      <circle cx="150" cy="170" r="5" fill="#D4A847"/>
+      <line x1="250" y1="100" x2="380" y2="200" stroke="#D4A847" stroke-width="0.8" opacity="0.6"/>
+      <line x1="380" y1="200" x2="350" y2="360" stroke="#D4A847" stroke-width="0.8" opacity="0.6"/>
+      <line x1="350" y1="360" x2="120" y2="320" stroke="#D4A847" stroke-width="0.8" opacity="0.6"/>
+      <line x1="120" y1="320" x2="150" y2="170" stroke="#D4A847" stroke-width="0.8" opacity="0.6"/>
+      <line x1="150" y1="170" x2="250" y2="100" stroke="#D4A847" stroke-width="0.8" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Soluciones Tecnológicas</div>
+    <h1>Impulsamos el crecimiento<br>de <span>tu empresa</span><br>con tecnología.</h1>
+    <p>Consultoría, desarrollo de software y talento TI especializado. Más de 5 años transformando empresas en Latinoamérica.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Comencemos</a>
+      <a href="#" class="btn-ghost">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">+150</div>
+        <div class="stat-label">Proyectos entregados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Clientes satisfechos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="section-label">Lo que hacemos</div>
+  <h2 class="section-title">Nuestros Servicios</h2>
+  <p class="section-sub">Soluciones integrales de tecnología diseñadas para impulsar la competitividad y el crecimiento de tu organización.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="card-icon">⚙</div>
+      <h3>Consultoría TI & Procesos</h3>
+      <p>El primer paso para saber cómo estamos y hacia dónde ir.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">📣</div>
+      <h3>Marketing Digital</h3>
+      <p>Maximiza tu visibilidad y alcance en el entorno digital.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">💡</div>
+      <h3>Proyectos TI</h3>
+      <p>Transformando ideas en realidades tecnológicas innovadoras.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">💻</div>
+      <h3>Software a Medida</h3>
+      <p>Soluciones diseñadas exclusivamente para tu negocio.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">🔬</div>
+      <h3>QA Testing & Automation</h3>
+      <p>Prevén errores y garantizá la calidad de tus productos.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">📊</div>
+      <h3>Statements</h3>
+      <p>Evaluaciones precisas para un rendimiento insuperable.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">👥</div>
+      <h3>Staffing TI</h3>
+      <p>Tu aliado estratégico de inicio a fin para cada proyecto.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">🌐</div>
+      <h3>Diseño y Desarrollo Web</h3>
+      <p>Velocidad, calidad y adaptabilidad en cada entrega.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Think4Good</div>
+  <ul class="footer-links">
+    <li><a href="#">Privacidad</a></li>
+    <li><a href="#">Términos</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+  <span class="footer-copy">© 2022 Think4Good. Todos los derechos reservados.</span>
+</footer>
+
+</body>
+</html>

@@ -1,192 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Think4good</title>
-    <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - Think4Good</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/logo.png?v=1736294773449" alt="Think4good Logo"></a>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="servicios.html" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="staffingti.html">Staffing TI</a></li>
-                        <li><a href="consultoria.html">Consultoría TI</a></li>
-                        <li><a href="proyectos.html">Proyectos TI</a></li>
-                        <li><a href="testing.html">QA Testing</a></li>
-                        <<li><a href="statement.html">Statements</a></li>
-                        <li><a href="softwareamedida.html">Software a Medida</a></li>
-                        <li><a href="diseñoweb.html">Diseño y Desarrollo Web</a></li>
-                        <li><a href="marketing.html">Marketing Digital</a></li>
 
-                    </ul>
-                </li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="testimonios.html">Testimonios</a></li>
-                <li><a href="contacto.html" class="contact-btn">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </header>
+<header role="banner">
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo"><img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain"></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Servicios <i class="fas fa-chevron-down"></i></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="staffingti.html">Staffing TI</a></li>
+          <li><a href="consultoria.html">Consultoría TI</a></li>
+          <li><a href="testing.html">QA Testing</a></li>
+          <li><a href="statement.html">Statements</a></li>
+          <li><a href="softwareamedida.html">Software a Medida</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="testimonios.html">Testimonios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta">Contáctanos</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <nav id="nav-mobile" class="nav-mobile" aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="testimonios.html">Testimonios</a>
+    <a href="productos.html">Productos</a>
+      <a href="contacto.html" class="nav-mobile-cta">Contáctanos</a>
+  </nav>
+</header>
 
-    <section class="servicios-section">
-    <h2>Nuestros Servicios</h2>
-    <div class="servicios-container">
-        <a href="consultoria.html" class="servicio-card">
-            <div class="icono">💡</div>
-            <h3>Consultoría TI & Procesos</h3>
-            <p>Comienza evaluando el estado actual de tu negocio.</p>
-        </a>
-        <a href="marketing.html" class="servicio-card">
-            <div class="icono">📈</div>
-            <h3>Marketing Digital</h3>
-            <p>Impulsa tu presencia y conecta con tu audiencia en el entorno digital.</p>
-        </a>
-        <a href="proyectos.html" class="servicio-card">
-            <div class="icono">💻</div>
-            <h3>Proyectos TI</h3>
-            <p>Llevamos tus ideas al siguiente nivel con soluciones tecnológicas innovadoras.</p>
-        </a>
-        <a href="softwareamedida.html" class="servicio-card">
-            <div class="icono">🛠️</div>
-            <h3>Softwares a tu medida</h3>
-            <p>Creamos herramientas tecnológicas que se adaptan a las necesidades de tu negocio.</p>
-        </a>
-        <a href="testing.html" class="servicio-card">
-            <div class="icono">🔍</div>
-            <h3>QA Testing & Automatización</h3>
-            <p>Asegura la excelencia de tus productos detectando y corrigiendo fallos a tiempo.</p>
-        </a>
-        <a href="statement.html" class="servicio-card">
-            <div class="icono">🛡️</div>
-            <h3>Statements</h3>
-            <p>Optimiza tus sistemas con evaluaciones precisas para un rendimiento insuperable.</p>
-        </a>
-        <a href="staffingti.html" class="servicio-card">
-            <div class="icono">👥</div>
-            <h3>Staffing TI</h3>
-            <p>Tu socio estratégico para encontrar el talento perfecto para cada proyecto.</p>
-        </a>
-        <a href="diseñoweb.html" class="servicio-card">
-            <div class="icono">⚡</div>
-            <h3>Diseño y Desarrollo Web</h3>
-            <p> Desarrollo ágil, eficiente y a la medida de tus objetivos.</p>
-        </a>
-    </div>
+<!-- Hero -->
+<section class="page-hero">
+  <div class="section-inner">
+    <p class="eyebrow">Lo que hacemos</p>
+    <h1>Nuestros <span class="accent">Servicios</span></h1>
+    <p class="hero-desc">Soluciones tecnológicas integrales diseñadas para impulsar el crecimiento y la eficiencia de tu empresa.</p>
+  </div>
 </section>
 
-<style>
-/* Estilo para la sección de servicios con enlaces, íconos, animaciones y diseño limpio */
-.servicios-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #edf2f7, #e2e8f0);
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
+<!-- Servicios grid -->
+<section class="section-light">
+  <div class="section-inner">
+    <div class="grid-3">
 
-.servicios-section h2 {
-    font-size: 2.5rem;
-    color: #2d3748;
-    margin-bottom: 40px;
-    border-bottom: 3px solid #38b2ac;
-    display: inline-block;
-    padding-bottom: 10px;
-    animation: fadeInDown 1s ease;
-}
+      <a href="consultoria.html" class="service-card-light">
+        <div class="service-card-icon"><i class="fas fa-lightbulb"></i></div>
+        <h3>Consultoría TI &amp; Procesos</h3>
+        <p>Comienza evaluando el estado actual de tu negocio y define una hoja de ruta tecnológica efectiva.</p>
+      </a>
 
-.servicios-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
+      <a href="productos.html" class="service-card-light">
+        <div class="service-card-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Productos Propios</h3>
+        <p>Nuestras plataformas SaaS: Timelot, Nexora, Evalion y PropStaff.</p>
+      </a>
 
-.servicio-card {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    max-width: 350px;
-    text-align: center;
-    animation: fadeInUp 1s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-}
+      <a href="softwareamedida.html" class="service-card-light">
+        <div class="service-card-icon"><i class="fas fa-tools"></i></div>
+        <h3>Software a Medida</h3>
+        <p>Creamos herramientas tecnológicas que se adaptan exactamente a las necesidades de tu negocio.</p>
+      </a>
 
-.servicio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
+      <a href="testing.html" class="service-card-light">
+        <div class="service-card-icon"><i class="fas fa-search"></i></div>
+        <h3>QA Testing &amp; Automatización</h3>
+        <p>Asegura la excelencia de tus productos detectando y corrigiendo fallos a tiempo.</p>
+      </a>
 
-.servicio-card .icono {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: #38b2ac;
-    animation: bounce 2s infinite;
-}
+      <a href="statement.html" class="service-card-light">
+        <div class="service-card-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Statements</h3>
+        <p>Evaluaciones precisas para un rendimiento insuperable y resultados medibles.</p>
+      </a>
 
-.servicio-card h3 {
-    font-size: 1.5rem;
-    color: #2d3748;
-    margin-bottom: 15px;
-}
+      <a href="staffingti.html" class="service-card-light">
+        <div class="service-card-icon"><i class="fas fa-users"></i></div>
+        <h3>Staffing TI</h3>
+        <p>Tu socio estratégico para encontrar el talento perfecto para cada proyecto.</p>
+      </a>
 
-.servicio-card p {
-    font-size: 1rem;
-    color: #4a5568;
-}
+    </div>
+  </div>
+</section>
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="section-inner">
+    <h2>¿No encontrás lo que buscás?</h2>
+    <p>Cuéntanos tu desafío y diseñamos la solución perfecta para tu empresa.</p>
+    <a href="contacto.html" class="btn-lime">Hablar con un experto</a>
+  </div>
+</section>
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+<footer class="site-footer">
+  <div class="footer-logo"><img src="logo-degradado.png" alt="Think4Good" height="28" style="display:block;object-fit:contain"></div>
+  <ul class="footer-links">
+    <li><a href="politica.html">Privacidad</a></li>
+    <li><a href="terminosycondiciones.html">Términos</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/t4gthinkforgood" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.tiktok.com/@t4g_pe" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/t4g_pe" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/think4good" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://wa.me/51982841022" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="footer-copy">© 2022 Think4Good. Todos los derechos reservados.</p>
+</footer>
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
+<script>
+const hamburger = document.querySelector('.nav-hamburger');
+const drawer = document.getElementById('nav-mobile');
+hamburger?.addEventListener('click', () => {
+  const open = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', String(!open));
+  drawer?.classList.toggle('open', !open);
+});
+document.addEventListener('click', e => {
+  if (!hamburger?.contains(e.target) && !drawer?.contains(e.target)) {
+    hamburger?.setAttribute('aria-expanded','false');
+    drawer?.classList.remove('open');
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') { hamburger?.setAttribute('aria-expanded','false'); drawer?.classList.remove('open'); }
+});
+</script>
 
-@media (max-width: 768px) {
-    .servicios-section h2 { font-size: 2rem; }
-    .servicio-card { max-width: 100%; }
-}
-</style>
-
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links" style="text-align: left;">
-               <a href="politica.html">Política de Privacidad</a>
-                <a href="terminosycondiciones.html">Términos y Condiciones</a>
-                <a href="contacto.html">Contacto</a>
-            </div>
-            <div class="footer-center" style="text-align: center;">
-                <p>&copy; 2021 Think4good. Todos los derechos reservados.</p>
-            </div>
-            <div class="social-media" style="text-align: right;">
-                <a href="https://www.facebook.com/t4gthinkforgood" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@t4g_pe" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/t4g_pe" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/think4good" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/51982841022" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>

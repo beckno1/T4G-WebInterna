@@ -1,169 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Think4good</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Think4Good</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/logo.png?v=1736294773449" alt="Think4good Logo"></a>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="servicios.html" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="staffingti.html">Staffing TI</a></li>
-                        <li><a href="consultoria.html">Consultoría TI</a></li>
-                        <li><a href="proyectos.html">Proyectos TI</a></li>
-                        <li><a href="testing.html">QA Testing</a></li>
-                        <li><a href="statement.html">Statements</a></li>
-                        <li><a href="softwareamedida.html">Software a Medida</a></li>
-                        <li><a href="diseñoweb.html">Diseño y Desarrollo Web</a></li>
-                        <li><a href="marketing.html">Marketing Digital</a></li>
-                    </ul>
-                </li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="testimonios.html">Testimonios</a></li>
-                <li><a href="contacto.html" class="contact-btn">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="contacto-section">
-        <video autoplay muted loop id="bgvideo">
-            <source src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/fondo.mp4?v=1736295041783" type="video/mp4">
-            Tu navegador no soporta video HTML5.
-        </video>
-        
-        <div class="contacto-container">
-            <form class="contact-form" id="contactForm">
-                <h2>¡Ponte en contacto con nosotros!</h2>
-                <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
-                <button type="submit">Enviar Mensaje ✉️</button>
-            </form>
-        </div>
-    </section>
+<header role="banner">
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo"><img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain"></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Servicios <i class="fas fa-chevron-down"></i></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="staffingti.html">Staffing TI</a></li>
+          <li><a href="consultoria.html">Consultoría TI</a></li>
+          <li><a href="testing.html">QA Testing</a></li>
+          <li><a href="statement.html">Statements</a></li>
+          <li><a href="softwareamedida.html">Software a Medida</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="testimonios.html">Testimonios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta">Contáctanos</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <nav id="nav-mobile" class="nav-mobile" aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="testimonios.html">Testimonios</a>
+    <a href="productos.html">Productos</a>
+      <a href="contacto.html" class="nav-mobile-cta">Contáctanos</a>
+  </nav>
+</header>
 
-    <style>
-        /* Estilo para la sección de contacto con video de fondo, animaciones y diseño limpio */
-        .contacto-section {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 80px 20px;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-            z-index: 2; /* Asegura que esté por encima del video */
-        }
+<!-- Hero -->
+<section class="page-hero">
+  <div class="section-inner">
+    <p class="eyebrow">Estamos para ayudarte</p>
+    <h1>Ponte en <span class="accent">contacto</span></h1>
+    <p class="hero-desc">Cuéntanos sobre tu proyecto. Nuestro equipo te responderá a la brevedad para encontrar la mejor solución.</p>
+  </div>
+</section>
 
-        #bgvideo {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1; /* Coloca el video detrás del formulario */
-        }
+<!-- Contacto -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="contact-grid">
 
-        .contacto-container {
-            position: relative;
-            z-index: 3; /* Asegura que el formulario esté por encima del video */
-        }
+      <!-- Info de contacto -->
+      <div class="contact-info">
+        <h2>Información de <span class="accent">contacto</span></h2>
+        <p class="contact-intro">No dudes en comunicarte con nosotros por cualquiera de estos canales. Estamos disponibles para responder todas tus consultas.</p>
 
-        .contact-form {
-            background-color: rgba(255, 255, 255, 0.8); /* Ajustado para quitar el cuadro azul */
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            animation: fadeInLeft 1s ease;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #cbd5e0;
-            border-radius: 10px;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #3182ce;
-        }
-
-        .contact-form button {
-            background-color: #2181a9;
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #2181a9;
-        }
-
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @media (max-width: 768px) {
-            .contacto-section h2 { font-size: 2rem; }
-            .contact-form, .contact-map iframe { max-width: 100%; }
-        }
-    </style>
-
-    <script>
-        // Validación simple del formulario
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('¡Gracias por tu mensaje! Nos pondremos en contacto pronto.');
-            form.reset();
-        });
-    </script>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links" style="text-align: left;">
-                <a href="politica.html">Política de Privacidad</a>
-                <a href="terminosycondiciones.html">Términos y Condiciones</a>
-                <a href="contacto.html">Contacto</a>
+        <ul class="contact-details">
+          <li>
+            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:reclutamiento@think4good.org">reclutamiento@think4good.org</a>
             </div>
-            <div class="footer-center" style="text-align: center;">
-                <p>&copy; 2021 Think4good. Todos los derechos reservados.</p>
+          </li>
+          <li>
+            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+            <div>
+              <strong>Teléfono / WhatsApp</strong>
+              <a href="https://wa.me/51982841022" target="_blank">+51 982 841 022</a>
             </div>
-            <div class="social-media" style="text-align: right;">
-                <a href="https://www.facebook.com/t4gthinkforgood" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@t4g_pe" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/t4g_pe" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/think4good" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/51982841022" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+            <div>
+              <strong>Ubicación</strong>
+              <span>Lima, Perú</span>
             </div>
+          </li>
+        </ul>
+
+        <div class="contact-social">
+          <a href="https://www.facebook.com/t4gthinkforgood" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.tiktok.com/@t4g_pe" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/t4g_pe" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/think4good" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/51982841022" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-    </footer>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="nombre">Tu nombre</label>
+            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Juan García" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Correo electrónico</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="juan@empresa.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="asunto">Asunto</label>
+            <input class="form-input" type="text" id="asunto" name="asunto" placeholder="¿En qué podemos ayudarte?">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="mensaje">Mensaje</label>
+            <textarea class="form-textarea" id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-lime">Enviar mensaje</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-logo"><img src="logo-degradado.png" alt="Think4Good" height="28" style="display:block;object-fit:contain"></div>
+  <ul class="footer-links">
+    <li><a href="politica.html">Privacidad</a></li>
+    <li><a href="terminosycondiciones.html">Términos</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/t4gthinkforgood" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.tiktok.com/@t4g_pe" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/t4g_pe" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/think4good" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://wa.me/51982841022" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="footer-copy">© 2022 Think4Good. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+const hamburger = document.querySelector('.nav-hamburger');
+const drawer = document.getElementById('nav-mobile');
+hamburger?.addEventListener('click', () => {
+  const open = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', String(!open));
+  drawer?.classList.toggle('open', !open);
+});
+document.addEventListener('click', e => {
+  if (!hamburger?.contains(e.target) && !drawer?.contains(e.target)) {
+    hamburger?.setAttribute('aria-expanded','false');
+    drawer?.classList.remove('open');
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') { hamburger?.setAttribute('aria-expanded','false'); drawer?.classList.remove('open'); }
+});
+
+// Formulario
+const form = document.getElementById('contactForm');
+const submitBtn = form?.querySelector('button[type="submit"]');
+
+form?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const nombre  = document.getElementById('nombre').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const asunto  = document.getElementById('asunto').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+
+  if (!nombre || !email || !mensaje) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+
+  try {
+    const res = await fetch('https://think4good.org/api/contacto', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre, email, asunto, mensaje }),
+    });
+    const data = await res.json();
+
+    if (res.ok) {
+      submitBtn.textContent = '¡Mensaje enviado!';
+      submitBtn.style.background = '#CDFC7C';
+      form.reset();
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar mensaje';
+        submitBtn.style.background = '';
+      }, 4000);
+    } else {
+      alert(data.error || 'Ocurrió un error. Intenta nuevamente.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar mensaje';
+    }
+  } catch {
+    alert('No se pudo conectar. Verifica tu conexión e intenta nuevamente.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar mensaje';
+  }
+});
+</script>
+
 </body>
 </html>

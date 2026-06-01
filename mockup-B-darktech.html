@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup B — Dark Tech Pulse</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0A0F;
+  --bg-2:#0F0F1A;
+  --blue:#00D4FF;
+  --purple:#7B2FFF;
+  --white:#FFFFFF;
+  --gray:#94A3B8;
+  --gray-dark:#1E1E2E;
+  --text-muted:#64748b;
+}
+body{
+  font-family:'Space Grotesk',sans-serif;
+  background:var(--bg);color:var(--white);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  background:rgba(10,10,15,0.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,212,255,0.1);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:68px;z-index:100;
+}
+.nav-logo{
+  font-size:20px;font-weight:700;letter-spacing:-0.5px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  color:var(--gray);text-decoration:none;
+  font-size:14px;font-weight:500;transition:color .2s;
+}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{
+  padding:9px 22px;border-radius:6px;
+  font-size:13px;font-weight:600;text-decoration:none;
+  border:1px solid rgba(0,212,255,0.4);
+  color:var(--blue);
+  transition:all .2s;
+  background:rgba(0,212,255,0.05);
+}
+.nav-cta:hover{background:rgba(0,212,255,0.15);border-color:var(--blue)}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:68px 60px 0;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 70% 50%, rgba(123,47,255,0.15) 0%, transparent 60%),
+             radial-gradient(ellipse 60% 50% at 20% 80%, rgba(0,212,255,0.08) 0%, transparent 50%),
+             var(--bg);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;width:100%;max-width:1200px;
+}
+.hero-left{}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);
+  padding:6px 14px;border-radius:100px;
+  font-size:12px;color:var(--blue);letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:28px;
+}
+.hero-tag::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 6px var(--blue);
+  display:block;
+}
+.hero h1{
+  font-size:64px;font-weight:700;line-height:1.05;
+  letter-spacing:-2px;margin-bottom:24px;
+}
+.hero h1 .grad{
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero p{
+  color:var(--gray);font-size:17px;line-height:1.7;
+  margin-bottom:40px;font-weight:400;max-width:480px;
+}
+.hero-actions{display:flex;gap:14px;align-items:center}
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  color:var(--white);padding:14px 32px;border-radius:8px;
+  font-weight:600;font-size:14px;text-decoration:none;
+  box-shadow:0 0 24px rgba(0,212,255,0.3);
+  transition:box-shadow .2s;
+}
+.btn-primary:hover{box-shadow:0 0 40px rgba(0,212,255,0.5)}
+.btn-ghost{
+  color:var(--gray);font-size:14px;text-decoration:none;
+  font-weight:500;padding:14px 24px;
+  border:1px solid rgba(255,255,255,0.1);border-radius:8px;
+  transition:all .2s;
+}
+.btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,0.3)}
+
+/* Hero right — circuit graphic */
+.hero-right{
+  position:relative;height:500px;
+  display:flex;align-items:center;justify-content:center;
+}
+.circuit-bg{
+  width:100%;height:100%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(123,47,255,0.2) 0%, transparent 60%);
+  position:absolute;
+}
+.circuit-svg{width:90%;height:90%;position:relative;z-index:2}
+
+/* SERVICES */
+.services{
+  padding:100px 60px;
+  background:var(--bg-2);
+  position:relative;
+}
+.services::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,0.4),transparent);
+}
+.section-header{margin-bottom:56px}
+.section-tag{
+  color:var(--blue);font-size:11px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  margin-bottom:12px;display:flex;align-items:center;gap:10px;
+}
+.section-tag::before{content:'//';opacity:0.5}
+.section-title{
+  font-size:40px;font-weight:700;letter-spacing:-1.5px;
+  margin-bottom:14px;
+}
+.section-sub{color:var(--gray);font-size:16px;line-height:1.6;max-width:560px}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.service-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  padding:28px 24px;border-radius:12px;
+  backdrop-filter:blur(8px);
+  transition:border-color .3s,background .3s,transform .2s;
+  cursor:default;
+}
+.service-card:hover{
+  border-color:rgba(0,212,255,0.3);
+  background:rgba(0,212,255,0.04);
+  transform:translateY(-4px);
+}
+.card-icon{
+  width:40px;height:40px;border-radius:8px;
+  background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(123,47,255,0.15));
+  border:1px solid rgba(0,212,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;margin-bottom:16px;
+}
+.service-card h3{font-size:14px;font-weight:600;margin-bottom:8px;color:var(--white);line-height:1.3}
+.service-card p{color:var(--gray);font-size:13px;line-height:1.6}
+
+/* FOOTER */
+footer{
+  background:var(--bg);
+  padding:40px 60px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-logo{
+  font-size:18px;font-weight:700;letter-spacing:-0.5px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.footer-links{display:flex;gap:28px;list-style:none}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-links a:hover{color:var(--gray)}
+.footer-copy{color:var(--text-muted);font-size:12px}
+
+.mockup-badge{
+  position:fixed;bottom:20px;right:20px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  color:var(--white);padding:8px 16px;border-radius:6px;
+  font-size:12px;font-weight:700;letter-spacing:1px;
+  z-index:999;text-transform:uppercase;
+  box-shadow:0 0 20px rgba(0,212,255,0.4);
+}
+</style>
+</head>
+<body>
+
+<div class="mockup-badge">B — Dark Tech Pulse</div>
+
+<nav>
+  <div class="nav-logo">Think4Good</div>
+  <ul class="nav-links">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Nosotros</a></li>
+    <li><a href="#">Testimonios</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contáctanos</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-tag">IT Services · Latam</div>
+      <h1>TRANSFORMAMOS<br>TU <span class="grad">NEGOCIO</span><br>CON TECNOLOGÍA.</h1>
+      <p>Staffing TI, desarrollo de software, consultoría y QA. Soluciones tecnológicas de alto impacto para empresas que quieren crecer.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Comencemos</a>
+        <a href="#" class="btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="circuit-bg"></div>
+      <svg class="circuit-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Circuit board pattern -->
+        <rect x="160" y="160" width="80" height="80" rx="8" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+        <rect x="180" y="180" width="40" height="40" rx="4" fill="rgba(123,47,255,0.2)" stroke="rgba(123,47,255,0.6)" stroke-width="1"/>
+        <!-- Traces -->
+        <path d="M200 160 L200 100 L280 100 L280 60" stroke="rgba(0,212,255,0.4)" stroke-width="1.5" fill="none"/>
+        <path d="M240 200 L320 200 L320 140 L360 140" stroke="rgba(0,212,255,0.3)" stroke-width="1" fill="none"/>
+        <path d="M200 240 L200 320 L120 320 L120 360" stroke="rgba(123,47,255,0.4)" stroke-width="1.5" fill="none"/>
+        <path d="M160 200 L80 200 L80 280 L40 280" stroke="rgba(0,212,255,0.3)" stroke-width="1" fill="none"/>
+        <path d="M240 160 L240 80 L160 80 L160 40" stroke="rgba(123,47,255,0.3)" stroke-width="1" fill="none"/>
+        <!-- Nodes -->
+        <circle cx="280" cy="60" r="6" fill="rgba(0,212,255,0.8)" filter="url(#glow1)"/>
+        <circle cx="360" cy="140" r="5" fill="rgba(0,212,255,0.6)"/>
+        <circle cx="120" cy="360" r="6" fill="rgba(123,47,255,0.8)"/>
+        <circle cx="40" cy="280" r="5" fill="rgba(0,212,255,0.5)"/>
+        <circle cx="160" cy="40" r="5" fill="rgba(123,47,255,0.6)"/>
+        <!-- Secondary traces -->
+        <path d="M280 100 L340 100 L340 200 L380 200" stroke="rgba(0,212,255,0.15)" stroke-width="1" fill="none"/>
+        <path d="M120 320 L60 320 L60 240 L20 240" stroke="rgba(123,47,255,0.15)" stroke-width="1" fill="none"/>
+        <!-- Dots grid -->
+        <circle cx="100" cy="100" r="2" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="140" cy="100" r="2" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="300" cy="300" r="2" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="340" cy="300" r="2" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="100" cy="300" r="2" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="300" cy="100" r="2" fill="rgba(255,255,255,0.1)"/>
+        <defs>
+          <filter id="glow1"><feGaussianBlur stdDeviation="3" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="section-header">
+    <div class="section-tag">Servicios</div>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-sub">Soluciones tecnológicas para cada etapa de tu empresa, desde la consultoría inicial hasta la ejecución completa.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="card-icon">⚙</div>
+      <h3>Consultoría TI & Procesos</h3>
+      <p>El primer paso para saber cómo estamos.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">📣</div>
+      <h3>Marketing Digital</h3>
+      <p>Maximizá tu visibilidad y alcance en línea.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">💡</div>
+      <h3>Proyectos TI</h3>
+      <p>Transformando ideas en realidades innovadoras.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">💻</div>
+      <h3>Software a Medida</h3>
+      <p>Soluciones diseñadas exclusivamente para vos.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">🔬</div>
+      <h3>QA Testing & Automation</h3>
+      <p>Prevén errores y garantizá la calidad.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">📊</div>
+      <h3>Statements</h3>
+      <p>Evaluaciones precisas para rendimiento óptimo.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">👥</div>
+      <h3>Staffing TI</h3>
+      <p>Tu aliado estratégico para cada proyecto.</p>
+    </div>
+    <div class="service-card">
+      <div class="card-icon">🌐</div>
+      <h3>Diseño y Desarrollo Web</h3>
+      <p>Velocidad, calidad y adaptabilidad.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Think4Good</div>
+  <ul class="footer-links">
+    <li><a href="#">Privacidad</a></li>
+    <li><a href="#">Términos</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+  <span class="footer-copy">© 2022 Think4Good.</span>
+</footer>
+
+</body>
+</html>

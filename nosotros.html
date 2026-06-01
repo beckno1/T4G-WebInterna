@@ -1,223 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Think4good</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-<style>
-/* Estilo Profesional en Cuadrados */
-.nosotros-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #f5f7fa, #e2e8f0);
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-}
-
-.nosotros-section h2 {
-    font-size: 2.5rem;
-    color: #2d3748;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #3182ce;
-    padding-bottom: 10px;
-}
-
-.info-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-.info-card {
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 280px;
-}
-
-.info-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-}
-
-.info-card h3 {
-    font-size: 1.6rem;
-    color: #2d3748;
-    margin-bottom: 15px;
-}
-
-.info-card p {
-    color: #4a5568;
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-.team-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    width: 100%;
-}
-
-.team-card {
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.team-card img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    filter: grayscale(100%) brightness(90%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.team-card img:hover {
-    filter: grayscale(0%) brightness(100%);
-    transform: scale(1.1);
-}
-
-.team-card h3 {
-    font-size: 1.4rem;
-    color: #2d3748;
-    margin: 15px 0 5px;
-}
-
-.team-card p {
-    color: #718096;
-    padding-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    .nosotros-section h2 {
-        font-size: 2rem;
-    }
-
-    .info-card p, .team-card p {
-        font-size: 1rem;
-    }
-
-    .team-card img {
-        height: 180px;
-    }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Think4Good</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/logo.png?v=1736294773449" alt="Think4good Logo"></a>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="servicios.html" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="staffingti.html">Staffing TI</a></li>
-                        <li><a href="consultoria.html">Consultoría TI</a></li>
-                        <li><a href="proyectos.html">Proyectos TI</a></li>
-                        <li><a href="testing.html">QA Testing</a></li>
-                      <li><a href="statement.html">Statements</a></li>
-                        <li><a href="softwareamedida.html">Software a Medida</a></li>
-                        <li><a href="diseñoweb.html">Diseño y Desarrollo Weby</a></li>
-                        <li><a href="marketing.html">Marketing Digital</a></li>
-                    </ul>
-                </li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="testimonios.html">Testimonios</a></li>
-                <li><a href="contacto.html" class="contact-btn">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Encabezado con video -->
- <!-- HTML + CSS para la sección Nosotros (Estilo Profesional y Novedoso) - Actualizado a 5 columnas -->
-<!-- HTML + CSS para la sección Nosotros con contenido en cuadrados -->
-<section class="nosotros-section">
-    <h2>Sobre nosotros</h2>
-    <div class="info-cards">
-        <div class="info-card">
-            <h3> Historia</h3>
-            <p>En <strong>Think4good</strong>, llevamos años transformando ideas en soluciones tecnológicas personalizadas. Nuestro camino ha estado lleno de desafíos y logros, lo que nos ha permitido convertirnos en una empresa confiable en el sector. Creemos en la innovación como motor de cambio.</p>
-        </div>
-        <div class="info-card">
-            <h3>Misión</h3>
-            <p>Ofrecer soluciones tecnológicas innovadoras que generen impacto y valor real. Nos comprometemos a entender las necesidades de cada cliente, proporcionando estrategias tecnológicas que mejoren su rendimiento, aumenten su competitividad y potencien su crecimiento sostenible en el mercado.</p>
-        </div>
-        <div class="info-card">
-            <h3> Visión</h3>
-            <p>Ser referentes en el sector TI a través de la excelencia y el compromiso. Aspiramos a ser la primera opción para las empresas que buscan un socio tecnológico confiable, destacando por nuestra capacidad de adaptarnos a un entorno en constante cambio y por ofrecer soluciones que transformen negocios.</p>
-        </div>
-        
-    </div>
-<h2>Conoce a Nuestro Equipo</h2>
-    <div class="team-cards">
-        <div class="team-card">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/laura.jpg?v=1740225522897" alt="Laura Martínez">
-            <h3>Laura Martínez</h3>
-            <p>CEO & Fundadora</p>
-        </div>
-        <div class="team-card">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/b.jpg?v=1740225530637" alt="Carlos Pérez">
-            <h3>Carlos Pérez</h3>
-            <p>Director de Tecnología</p>
-        </div>
-        <div class="team-card">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/maria.jpg?v=1740225466880" alt="Ana Rodríguez">
-            <h3>Ana Rodríguez</h3>
-            <p>Analista de Datos</p>
-        </div>
-        <div class="team-card">
-            <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/jose.webp?v=1740225459131" alt="Luis Torres">
-            <h3>Luis Torres</h3>
-            <p>Gerente de Proyectos</p>
-        </div>
-    </div>
+<header role="banner">
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo"><img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain"></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Servicios <i class="fas fa-chevron-down"></i></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="staffingti.html">Staffing TI</a></li>
+          <li><a href="consultoria.html">Consultoría TI</a></li>
+          <li><a href="testing.html">QA Testing</a></li>
+          <li><a href="statement.html">Statements</a></li>
+          <li><a href="softwareamedida.html">Software a Medida</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="testimonios.html">Testimonios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta">Contáctanos</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <nav id="nav-mobile" class="nav-mobile" aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="testimonios.html">Testimonios</a>
+    <a href="productos.html">Productos</a>
+      <a href="contacto.html" class="nav-mobile-cta">Contáctanos</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="section-inner">
+    <p class="eyebrow">Quiénes somos</p>
+    <h1>Sobre <span class="accent">nosotros</span></h1>
+    <p class="hero-desc">Somos un equipo apasionado por la tecnología, comprometido con transformar negocios a través de soluciones innovadoras y personalizadas.</p>
+  </div>
 </section>
 
+<!-- Historia / Misión / Visión -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="grid-3">
 
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fas fa-landmark"></i></div>
+        <h3>Historia</h3>
+        <p>En <strong>Think4Good</strong>, llevamos años transformando ideas en soluciones tecnológicas personalizadas. Nuestro camino ha estado lleno de desafíos y logros, lo que nos ha permitido convertirnos en una empresa confiable en el sector. Creemos en la innovación como motor de cambio.</p>
+      </div>
 
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Misión</h3>
+        <p>Ofrecer soluciones tecnológicas innovadoras que generen impacto y valor real. Nos comprometemos a entender las necesidades de cada cliente, proporcionando estrategias tecnológicas que mejoren su rendimiento, aumenten su competitividad y potencien su crecimiento sostenible en el mercado.</p>
+      </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links" style="text-align: left;">
-                <a href="politica.html">Política de Privacidad</a>
-                <a href="terminosycondiciones.html">Términos y Condiciones</a>
-                <a href="contacto.html">Contacto</a>
-            </div>
-            <div class="footer-center" style="text-align: center;">
-                <p>&copy; 2021 Think4good. Todos los derechos reservados.</p>
-            </div>
-            <div class="social-media" style="text-align: right;">
-                <a href="https://www.facebook.com/t4gthinkforgood" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@t4g_pe" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/t4g_pe" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/think4good" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/51982841022" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fas fa-eye"></i></div>
+        <h3>Visión</h3>
+        <p>Ser referentes en el sector TI a través de la excelencia y el compromiso. Aspiramos a ser la primera opción para las empresas que buscan un socio tecnológico confiable, destacando por nuestra capacidad de adaptarnos a un entorno en constante cambio y por ofrecer soluciones que transformen negocios.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Equipo — temporalmente oculto -->
+<section class="section-black" style="display:none">
+  <div class="section-inner">
+    <p class="eyebrow">Las personas detrás de Think4Good</p>
+    <h2>Conoce a nuestro <span class="accent">equipo</span></h2>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card-img">
+          <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/laura.jpg?v=1740225522897" alt="Laura Martínez">
         </div>
-    </footer>
+        <div class="team-card-body">
+          <h3>Laura Martínez</h3>
+          <p>CEO &amp; Fundadora</p>
+        </div>
+      </div>
 
-    <script>
-        ScrollReveal().reveal('.mvv-item', { interval: 200, distance: '50px', origin: 'bottom', duration: 1000 });
-        ScrollReveal().reveal('.miembro', { interval: 300, distance: '50px', origin: 'left', duration: 1000 });
-        ScrollReveal().reveal('.tech-logos img', { interval: 150, distance: '20px', origin: 'top', duration: 800 });
-    </script>
+      <div class="team-card">
+        <div class="team-card-img">
+          <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/b.jpg?v=1740225530637" alt="Carlos Pérez">
+        </div>
+        <div class="team-card-body">
+          <h3>Carlos Pérez</h3>
+          <p>Director de Tecnología</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-img">
+          <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/maria.jpg?v=1740225466880" alt="Ana Rodríguez">
+        </div>
+        <div class="team-card-body">
+          <h3>Ana Rodríguez</h3>
+          <p>Analista de Datos</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-img">
+          <img src="https://cdn.glitch.global/7053447f-2509-4e39-9176-28733a97b57a/jose.webp?v=1740225459131" alt="Luis Torres">
+        </div>
+        <div class="team-card-body">
+          <h3>Luis Torres</h3>
+          <p>Gerente de Proyectos</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="section-inner">
+    <h2>¿Listo para trabajar con nosotros?</h2>
+    <p>Contáctanos y descubrí cómo podemos impulsar tu negocio juntos.</p>
+    <a href="contacto.html" class="btn-lime">Hablemos hoy</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-logo"><img src="logo-degradado.png" alt="Think4Good" height="28" style="display:block;object-fit:contain"></div>
+  <ul class="footer-links">
+    <li><a href="politica.html">Privacidad</a></li>
+    <li><a href="terminosycondiciones.html">Términos</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/t4gthinkforgood" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.tiktok.com/@t4g_pe" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/t4g_pe" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/think4good" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://wa.me/51982841022" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="footer-copy">© 2022 Think4Good. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+const hamburger = document.querySelector('.nav-hamburger');
+const drawer = document.getElementById('nav-mobile');
+hamburger?.addEventListener('click', () => {
+  const open = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', String(!open));
+  drawer?.classList.toggle('open', !open);
+});
+document.addEventListener('click', e => {
+  if (!hamburger?.contains(e.target) && !drawer?.contains(e.target)) {
+    hamburger?.setAttribute('aria-expanded','false');
+    drawer?.classList.remove('open');
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') { hamburger?.setAttribute('aria-expanded','false'); drawer?.classList.remove('open'); }
+});
+</script>
+
 </body>
 </html>

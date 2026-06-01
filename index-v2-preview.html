@@ -94,9 +94,8 @@
     }
 
     .nav-links {
-      display: flex; gap: 36px; align-items: center; list-style: none;
+      display: flex; gap: 36px;
     }
-    .nav-links > li { display: flex; align-items: center; }
     .nav-links a {
       color: rgba(255,255,255,0.6);
       font-size: 14px; font-weight: 500; letter-spacing: 0.1px;
@@ -104,32 +103,6 @@
       padding: 8px 0;
     }
     .nav-links a:hover { color: var(--white); }
-
-    /* Dropdown */
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-toggle {
-      display: flex; align-items: center; gap: 5px;
-      color: rgba(255,255,255,0.6); font-size: 14px; font-weight: 500;
-      cursor: pointer; padding: 8px 0; transition: color .2s;
-      background: none; border: none; font-family: inherit;
-    }
-    .nav-dropdown-toggle:hover { color: var(--white); }
-    .nav-dropdown-toggle i { font-size: 10px; transition: transform .2s; }
-    .nav-dropdown:hover .nav-dropdown-toggle i { transform: rotate(180deg); }
-    .nav-dropdown-menu {
-      position: absolute; top: calc(100% + 8px); left: 0;
-      background: var(--black-2); border: 1px solid var(--purple-border);
-      border-radius: 10px; padding: 8px 0; min-width: 210px;
-      opacity: 0; visibility: hidden;
-      transform: translateY(-8px); transition: all .2s; z-index: 300;
-    }
-    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .nav-dropdown-menu a {
-      display: block; padding: 10px 18px;
-      color: rgba(255,255,255,0.65); font-size: 13px; font-weight: 500;
-      transition: color .15s, background .15s;
-    }
-    .nav-dropdown-menu a:hover { color: var(--white); background: rgba(170,123,251,0.08); }
 
     .nav-cta {
       background: var(--lime); color: var(--black);
@@ -320,52 +293,6 @@
       position: relative; z-index: 2;
     }
 
-    /* ── CIRCUIT ANIMATIONS ── */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50%       { transform: translateY(-14px); }
-    }
-    @keyframes pulse-lime {
-      0%, 100% { opacity: 0.9; filter: drop-shadow(0 0 4px #CDFC7C); }
-      50%       { opacity: 0.4; filter: drop-shadow(0 0 1px #CDFC7C); }
-    }
-    @keyframes pulse-purple {
-      0%, 100% { opacity: 0.9; filter: drop-shadow(0 0 4px #AA7BFB); }
-      50%       { opacity: 0.3; filter: drop-shadow(0 0 1px #AA7BFB); }
-    }
-    @keyframes trace-dash {
-      from { stroke-dashoffset: 300; }
-      to   { stroke-dashoffset: 0; }
-    }
-    @keyframes glow-pulse {
-      0%, 100% { opacity: 0.2; }
-      50%       { opacity: 0.45; }
-    }
-
-    .circuit-wrap {
-      animation: float 5s ease-in-out infinite;
-    }
-    .circuit-glow {
-      animation: glow-pulse 3s ease-in-out infinite;
-    }
-    /* Node pulses */
-    .node-lime { animation: pulse-lime 2.5s ease-in-out infinite; }
-    .node-lime-2 { animation: pulse-lime 2.5s ease-in-out infinite 0.8s; }
-    .node-lime-3 { animation: pulse-lime 2.5s ease-in-out infinite 1.6s; }
-    .node-purple { animation: pulse-purple 3s ease-in-out infinite 0.4s; }
-    .node-purple-2 { animation: pulse-purple 3s ease-in-out infinite 1.2s; }
-    /* Trace animations */
-    .trace-1 { stroke-dasharray: 300; animation: trace-dash 3s linear infinite; }
-    .trace-2 { stroke-dasharray: 300; animation: trace-dash 3s linear infinite 1s; }
-    .trace-3 { stroke-dasharray: 300; animation: trace-dash 3s linear infinite 2s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .circuit-wrap, .circuit-glow, .node-lime, .node-lime-2, .node-lime-3,
-      .node-purple, .node-purple-2, .trace-1, .trace-2, .trace-3 {
-        animation: none;
-      }
-    }
-
     /* ═══════════════════════════════════════════
        SERVICES
     ═══════════════════════════════════════════ */
@@ -410,7 +337,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
@@ -547,7 +474,7 @@
       .services { padding: 120px 32px; }
       .cta-band { padding: 64px 32px; }
       footer { padding: 40px 32px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: clamp(38px, 5vw, 56px); }
     }
 
@@ -615,24 +542,14 @@
   <header role="banner">
     <nav class="nav" aria-label="Navegación principal">
       <a href="index.html" class="nav-logo" aria-label="Think4Good — inicio">
-        <img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain">
+        Think4Good<span class="dot" aria-hidden="true"></span>
       </a>
 
       <ul class="nav-links" role="list">
         <li><a href="index.html" aria-current="page">Inicio</a></li>
-        <li class="nav-dropdown">
-          <button class="nav-dropdown-toggle" aria-haspopup="true">Servicios <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-          <ul class="nav-dropdown-menu" role="menu">
-            <li><a href="staffingti.html" role="menuitem">Staffing TI</a></li>
-            <li><a href="consultoria.html" role="menuitem">Consultoría TI</a></li>
-            <li><a href="testing.html" role="menuitem">QA Testing</a></li>
-            <li><a href="statement.html" role="menuitem">Statements</a></li>
-            <li><a href="softwareamedida.html" role="menuitem">Software a Medida</a></li>
-          </ul>
-        </li>
+        <li><a href="servicios.html">Servicios</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="testimonios.html">Testimonios</a></li>
-      <li><a href="productos.html">Productos</a></li>
       </ul>
 
       <a href="contacto.html" class="nav-cta">Contáctanos</a>
@@ -691,26 +608,26 @@
             <rect x="168" y="168" width="64" height="64" rx="6"
               fill="rgba(170,123,251,0.2)" stroke="rgba(205,252,124,0.4)" stroke-width="1"/>
             <!-- Traces top -->
-            <path class="trace-1" d="M200 150 L200 90 L280 90 L280 50" stroke="rgba(205,252,124,0.5)" stroke-width="1.5" fill="none"/>
+            <path d="M200 150 L200 90 L280 90 L280 50" stroke="rgba(205,252,124,0.5)" stroke-width="1.5" fill="none"/>
             <path d="M230 150 L230 110 L310 110 L310 70" stroke="rgba(170,123,251,0.35)" stroke-width="1" fill="none"/>
             <path d="M170 150 L170 80 L120 80 L120 40" stroke="rgba(205,252,124,0.3)" stroke-width="1" fill="none"/>
             <!-- Traces right -->
-            <path class="trace-2" d="M250 200 L330 200 L330 150 L370 150" stroke="rgba(205,252,124,0.5)" stroke-width="1.5" fill="none"/>
+            <path d="M250 200 L330 200 L330 150 L370 150" stroke="rgba(205,252,124,0.5)" stroke-width="1.5" fill="none"/>
             <path d="M250 230 L320 230 L320 280 L360 280" stroke="rgba(170,123,251,0.3)" stroke-width="1" fill="none"/>
             <!-- Traces bottom -->
-            <path class="trace-3" d="M200 250 L200 320 L140 320 L140 360" stroke="rgba(170,123,251,0.5)" stroke-width="1.5" fill="none"/>
+            <path d="M200 250 L200 320 L140 320 L140 360" stroke="rgba(170,123,251,0.5)" stroke-width="1.5" fill="none"/>
             <path d="M170 250 L170 300 L80 300 L80 350" stroke="rgba(205,252,124,0.25)" stroke-width="1" fill="none"/>
             <!-- Traces left -->
             <path d="M150 200 L70 200 L70 260 L30 260" stroke="rgba(205,252,124,0.4)" stroke-width="1.5" fill="none"/>
             <path d="M150 170 L90 170 L90 120 L50 120" stroke="rgba(170,123,251,0.25)" stroke-width="1" fill="none"/>
             <!-- Nodes lime -->
-            <circle class="node-lime" cx="280" cy="50" r="5" fill="#CDFC7C"/>
-            <circle class="node-lime-2" cx="370" cy="150" r="5" fill="#CDFC7C" opacity="0.7"/>
-            <circle class="node-lime-3" cx="30" cy="260" r="5" fill="#CDFC7C" opacity="0.8"/>
+            <circle cx="280" cy="50" r="5" fill="#CDFC7C" opacity="0.9"/>
+            <circle cx="370" cy="150" r="5" fill="#CDFC7C" opacity="0.7"/>
+            <circle cx="30" cy="260" r="5" fill="#CDFC7C" opacity="0.8"/>
             <circle cx="120" cy="40" r="4" fill="#CDFC7C" opacity="0.5"/>
             <!-- Nodes purple -->
-            <circle class="node-purple" cx="140" cy="360" r="5" fill="#AA7BFB"/>
-            <circle class="node-purple-2" cx="360" cy="280" r="5" fill="#AA7BFB" opacity="0.7"/>
+            <circle cx="140" cy="360" r="5" fill="#AA7BFB" opacity="0.9"/>
+            <circle cx="360" cy="280" r="5" fill="#AA7BFB" opacity="0.7"/>
             <circle cx="50" cy="120" r="4" fill="#AA7BFB" opacity="0.6"/>
             <circle cx="310" cy="70" r="4" fill="#AA7BFB" opacity="0.5"/>
             <!-- Connector dots -->
@@ -751,7 +668,7 @@
             <p data-pretext>El primer paso para saber cómo estamos y hacia dónde ir.</p>
           </a>
 
-          <a href="productos.html" class="service-card" style="text-decoration:none;display:block">
+          <a href="proyectos.html" class="service-card" style="text-decoration:none;display:block">
             <div class="card-icon" aria-hidden="true">
               <i class="fas fa-rocket"></i>
             </div>
@@ -759,6 +676,13 @@
             <p data-pretext>Nuestras plataformas SaaS: Timelot, Nexora, Evalion, PropStaff y más.</p>
           </a>
 
+          <a href="proyectos.html" class="service-card" style="text-decoration:none;display:block">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Proyectos TI</h3>
+            <p data-pretext>Transformando ideas en realidades tecnológicas innovadoras.</p>
+          </a>
 
           <a href="softwareamedida.html" class="service-card" style="text-decoration:none;display:block">
             <div class="card-icon" aria-hidden="true">
@@ -792,6 +716,13 @@
             <p data-pretext>Tu aliado estratégico de inicio a fin para cada proyecto.</p>
           </a>
 
+          <a href="diseñoweb.html" class="service-card" style="text-decoration:none;display:block">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Diseño y Desarrollo Web</h3>
+            <p data-pretext>Velocidad, calidad y adaptabilidad en cada entrega.</p>
+          </a>
 
         </div>
       </div>
@@ -814,7 +745,7 @@
   <!-- ── FOOTER ── -->
   <footer role="contentinfo">
     <div class="footer-logo" aria-label="Think4Good">
-      <img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain">
+      Think4Good<span class="dot" aria-hidden="true"></span>
     </div>
     <ul class="footer-links" role="list">
       <li><a href="politica.html">Privacidad</a></li>

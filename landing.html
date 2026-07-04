@@ -67,9 +67,17 @@
   }
   @keyframes lineIn { to { opacity: .4; } }
 
+  .net-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: netSpin 40s linear infinite;
+  }
+  @keyframes netSpin { to { rotate: 360deg; } }
+
   @media (prefers-reduced-motion: reduce) {
     .net-node, .net-line { animation: none !important; opacity: 1 !important; transform: none !important; }
     .net-line { opacity: .4 !important; }
+    .net-spin { animation: none !important; }
   }
 
   /* mobile drawer */
@@ -132,8 +140,9 @@
 
       <div class="max-w-7xl mx-auto grid xl:grid-cols-2 gap-16 items-center">
         <div class="min-w-0">
-          <p class="font-mono text-lime text-xs tracking-[2px] uppercase mb-6 border border-lime/30 bg-lime/5 inline-flex px-3.5 py-1.5 rounded-full">
-            // consultoría TI
+          <p class="inline-flex items-center gap-2 text-lime text-[11px] font-semibold tracking-[1.5px] uppercase border border-lime/30 bg-lime/5 px-3.5 py-1.5 rounded-full mb-6">
+            <span class="w-[5px] h-[5px] rounded-full bg-lime shadow-[0_0_8px_#CDFC7C]"></span>
+            Consultoría TI
           </p>
           <h1 class="font-display font-extrabold uppercase break-words leading-[1.1] tracking-tight text-[32px] sm:text-5xl md:text-6xl xl:text-[52px] mb-6">
             Del caos a un <span class="grad-text">sistema</span> que funciona.
@@ -155,29 +164,31 @@
         <div class="relative flex items-center justify-center h-[380px] sm:h-[440px]">
           <div class="absolute inset-0 rounded-full" style="background:radial-gradient(circle at 50% 50%,rgba(170,123,251,.18) 0%,transparent 60%)"></div>
           <svg viewBox="0 0 460 460" class="relative w-full max-w-[440px] h-full" aria-hidden="true">
-            <g fill="none" stroke="#AA7BFB" stroke-width="1">
-              <line class="net-line" style="--d:.05s" x1="230" y1="230" x2="230" y2="90"/>
-              <line class="net-line" style="--d:.1s"  x1="230" y1="230" x2="329" y2="131"/>
-              <line class="net-line" style="--d:.15s" x1="230" y1="230" x2="370" y2="230"/>
-              <line class="net-line" style="--d:.2s"  x1="230" y1="230" x2="329" y2="329"/>
-              <line class="net-line" style="--d:.25s" x1="230" y1="230" x2="230" y2="370"/>
-              <line class="net-line" style="--d:.3s"  x1="230" y1="230" x2="131" y2="329"/>
-              <line class="net-line" style="--d:.35s" x1="230" y1="230" x2="90"  y2="230"/>
-              <line class="net-line" style="--d:.4s"  x1="230" y1="230" x2="131" y2="131"/>
-            </g>
-            <circle class="net-node" style="--d:0s" cx="230" cy="230" r="14" fill="#AA7BFB"/>
-            <circle class="net-node" style="--tx:-40px;--ty:-70px;--d:.05s"  cx="230" cy="90"  r="7" fill="#CDFC7C"/>
-            <circle class="net-node" style="--tx:60px;--ty:-40px;--d:.1s"   cx="329" cy="131" r="6" fill="#CDFC7C" opacity=".9"/>
-            <circle class="net-node" style="--tx:80px;--ty:20px;--d:.15s"   cx="370" cy="230" r="7" fill="#CDFC7C"/>
-            <circle class="net-node" style="--tx:50px;--ty:70px;--d:.2s"    cx="329" cy="329" r="6" fill="#AA7BFB" opacity=".85"/>
-            <circle class="net-node" style="--tx:-20px;--ty:90px;--d:.25s"  cx="230" cy="370" r="7" fill="#CDFC7C"/>
-            <circle class="net-node" style="--tx:-70px;--ty:50px;--d:.3s"   cx="131" cy="329" r="6" fill="#AA7BFB" opacity=".85"/>
-            <circle class="net-node" style="--tx:-90px;--ty:-10px;--d:.35s" cx="90"  cy="230" r="7" fill="#CDFC7C"/>
-            <circle class="net-node" style="--tx:-50px;--ty:-60px;--d:.4s"  cx="131" cy="131" r="6" fill="#AA7BFB" opacity=".85"/>
             <circle cx="40"  cy="40"  r="1.5" fill="rgba(255,255,255,.08)"/>
             <circle cx="420" cy="40"  r="1.5" fill="rgba(255,255,255,.08)"/>
             <circle cx="40"  cy="420" r="1.5" fill="rgba(255,255,255,.08)"/>
             <circle cx="420" cy="420" r="1.5" fill="rgba(255,255,255,.08)"/>
+            <g class="net-spin">
+              <g fill="none" stroke="#AA7BFB" stroke-width="1">
+                <line class="net-line" style="--d:.05s" x1="230" y1="230" x2="230" y2="90"/>
+                <line class="net-line" style="--d:.1s"  x1="230" y1="230" x2="329" y2="131"/>
+                <line class="net-line" style="--d:.15s" x1="230" y1="230" x2="370" y2="230"/>
+                <line class="net-line" style="--d:.2s"  x1="230" y1="230" x2="329" y2="329"/>
+                <line class="net-line" style="--d:.25s" x1="230" y1="230" x2="230" y2="370"/>
+                <line class="net-line" style="--d:.3s"  x1="230" y1="230" x2="131" y2="329"/>
+                <line class="net-line" style="--d:.35s" x1="230" y1="230" x2="90"  y2="230"/>
+                <line class="net-line" style="--d:.4s"  x1="230" y1="230" x2="131" y2="131"/>
+              </g>
+              <circle class="net-node" style="--d:0s" cx="230" cy="230" r="14" fill="#AA7BFB"/>
+              <circle class="net-node" style="--tx:-40px;--ty:-70px;--d:.05s"  cx="230" cy="90"  r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:60px;--ty:-40px;--d:.1s"   cx="329" cy="131" r="6" fill="#CDFC7C" opacity=".9"/>
+              <circle class="net-node" style="--tx:80px;--ty:20px;--d:.15s"   cx="370" cy="230" r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:50px;--ty:70px;--d:.2s"    cx="329" cy="329" r="6" fill="#AA7BFB" opacity=".85"/>
+              <circle class="net-node" style="--tx:-20px;--ty:90px;--d:.25s"  cx="230" cy="370" r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:-70px;--ty:50px;--d:.3s"   cx="131" cy="329" r="6" fill="#AA7BFB" opacity=".85"/>
+              <circle class="net-node" style="--tx:-90px;--ty:-10px;--d:.35s" cx="90"  cy="230" r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:-50px;--ty:-60px;--d:.4s"  cx="131" cy="131" r="6" fill="#AA7BFB" opacity=".85"/>
+            </g>
           </svg>
         </div>
       </div>
@@ -186,8 +197,9 @@
     <!-- SERVICIOS -->
     <section id="servicios" class="bg-mint text-ink py-20 md:py-28 px-5 md:px-16">
       <div class="max-w-7xl mx-auto">
-        <p class="font-mono text-purpledark text-xs tracking-[2px] uppercase mb-3 flex items-center gap-2.5">
-          <span class="block w-6 h-0.5 bg-purpledark rounded-full"></span> // lo que hacemos
+        <p class="inline-flex items-center gap-2 text-purpledark text-[11px] font-semibold tracking-[1.5px] uppercase border border-purple/30 bg-purple/5 px-3.5 py-1.5 rounded-full mb-3">
+          <span class="w-[5px] h-[5px] rounded-full bg-purpledark shadow-[0_0_8px_#AA7BFB]"></span>
+          Lo que hacemos
         </p>
         <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-[42px] tracking-tight mb-4">Nuestros servicios</h2>
         <p class="text-[#4A5568] text-base sm:text-lg leading-relaxed max-w-xl mb-14">
@@ -216,7 +228,7 @@
           <a href="testing.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
             <span class="font-mono text-xs text-purple/70">04</span>
             <h3 class="font-display font-bold text-base mt-3 mb-2">QA Testing &amp; Automation</h3>
-            <p class="text-[#718096] text-sm leading-relaxed">Prevén errores y garantizá la calidad de cada entrega.</p>
+            <p class="text-[#718096] text-sm leading-relaxed">Previene errores y garantiza la calidad de cada entrega.</p>
             <span class="block h-[3px] w-0 group-hover:w-full mt-5 grad-line rounded-full transition-all duration-300"></span>
           </a>
           <a href="statement.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
@@ -238,8 +250,9 @@
     <!-- PROCESO -->
     <section id="proceso" class="bg-ink2 py-20 md:py-28 px-5 md:px-16">
       <div class="max-w-4xl mx-auto">
-        <p class="font-mono text-lime text-xs tracking-[2px] uppercase mb-3 flex items-center gap-2.5">
-          <span class="block w-6 h-0.5 bg-lime rounded-full"></span> // cómo trabajamos
+        <p class="inline-flex items-center gap-2 text-lime text-[11px] font-semibold tracking-[1.5px] uppercase border border-lime/30 bg-lime/5 px-3.5 py-1.5 rounded-full mb-3">
+          <span class="w-[5px] h-[5px] rounded-full bg-lime shadow-[0_0_8px_#CDFC7C]"></span>
+          Cómo trabajamos
         </p>
         <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-[42px] tracking-tight mb-14">
           Un proceso, no una promesa.
@@ -279,7 +292,7 @@
           ¿Listo para dar el <span class="grad-text">siguiente paso</span>?
         </h2>
         <p class="text-fog text-base sm:text-lg leading-relaxed mb-10">
-          Contanos tu desafío y armamos juntos la solución tecnológica que tu empresa necesita.
+          Cuéntanos tu desafío y armamos juntos la solución tecnológica que tu empresa necesita.
         </p>
         <a href="contacto.html" class="inline-block bg-lime text-ink font-bold text-sm px-9 py-4 rounded-lg shadow-[0_0_28px_rgba(205,252,124,0.25)] hover:opacity-90 hover:-translate-y-0.5 transition-all">
           Hablemos hoy

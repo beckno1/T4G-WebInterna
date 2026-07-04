@@ -1,893 +1,336 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Think4Good — Soluciones Tecnológicas para tu Empresa</title>
-  <meta name="description" content="Consultoría TI, desarrollo de software, staffing y QA. Soluciones tecnológicas de alto impacto para empresas que quieren crecer.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think4Good — Ordenamos tu tecnología</title>
+<meta name="description" content="Consultoría TI, desarrollo de software, staffing y QA. Llevamos tu tecnología del caos al sistema.">
+<link rel="icon" href="isotipo-degradado.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:        '#171C20',
+          ink2:       '#1E2429',
+          ink3:       '#252C32',
+          purple:     '#AA7BFB',
+          purpledark: '#8B5CF6',
+          lime:       '#CDFC7C',
+          mint:       '#F3FCE3',
+          fog:        '#8FA0AC',
+        },
+        fontFamily: {
+          display: ['Syne', 'sans-serif'],
+          sans:    ['Inter', 'sans-serif'],
+          mono:    ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
 
-  <style>
-    /* ── DESIGN TOKENS ── */
-    :root {
-      --black:        #171C20;
-      --black-2:      #1E2429;
-      --black-3:      #252C32;
-      --purple:       #AA7BFB;
-      --purple-dim:   rgba(170,123,251,0.15);
-      --purple-border:rgba(170,123,251,0.12);
-      --lime:         #CDFC7C;
-      --lime-dim:     rgba(205,252,124,0.08);
-      --lime-border:  rgba(205,252,124,0.3);
-      --mint:         #F3FCE3;
-      --white:        #FFFFFF;
-      --gray:         #8A9BA8;
-      --text-dark:    #1C2B2A;
-      --grad:         linear-gradient(135deg, #CDFC7C, #AA7BFB);
-      --nav-h:        68px;
-    }
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
 
-    /* ── RESET ── */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--black);
-      color: var(--white);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-    ul { list-style: none; }
-    button { border: none; background: none; cursor: pointer; font: inherit; }
+  .grad-text {
+    background: linear-gradient(90deg, #CDFC7C, #AA7BFB);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .grad-line { background: linear-gradient(135deg, #CDFC7C, #AA7BFB); }
 
-    /* ── FOCUS ── */
-    :focus-visible {
-      outline: 2px solid var(--lime);
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
+  :focus-visible { outline: 2px solid #CDFC7C; outline-offset: 3px; border-radius: 4px; }
 
-    /* ── SKIP LINK ── */
-    .skip-link {
-      position: absolute; top: -100px; left: 16px;
-      background: var(--lime); color: var(--black);
-      padding: 8px 16px; border-radius: 0 0 6px 6px;
-      font-weight: 600; font-size: 13px; z-index: 9999;
-      transition: top .2s;
-    }
-    .skip-link:focus { top: 0; }
+  /* ── Signature diagram: scattered network resolving into order ── */
+  .net-node {
+    transform: translate(var(--tx, 0), var(--ty, 0)) scale(.5);
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: netIn 1s cubic-bezier(.16,1,.3,1) forwards;
+    animation-delay: var(--d, 0s);
+  }
+  @keyframes netIn { to { transform: translate(0,0) scale(1); opacity: 1; } }
 
-    /* ═══════════════════════════════════════════
-       NAV
-    ═══════════════════════════════════════════ */
-    .nav {
-      position: fixed; top: 0; left: 0; width: 100%;
-      background: rgba(23,28,32,0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--purple-border);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 64px;
-      height: var(--nav-h);
-      z-index: 200;
-    }
+  .net-line {
+    opacity: 0;
+    animation: lineIn .7s ease forwards;
+    animation-delay: calc(var(--d, 0s) + .55s);
+  }
+  @keyframes lineIn { to { opacity: .4; } }
 
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px; font-weight: 800; letter-spacing: -0.5px;
-      color: var(--white);
-      display: flex; align-items: center; gap: 3px;
-    }
-    .nav-logo .dot {
-      display: inline-block; width: 7px; height: 7px;
-      border-radius: 50%; background: var(--lime);
-      position: relative; top: -3px;
-    }
+  .net-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: netSpin 40s linear infinite;
+  }
+  @keyframes netSpin { to { rotate: 360deg; } }
 
-    .nav-links {
-      display: flex; gap: 36px; align-items: center; list-style: none;
-    }
-    .nav-links > li { display: flex; align-items: center; }
-    .nav-links a {
-      color: rgba(255,255,255,0.6);
-      font-size: 14px; font-weight: 500; letter-spacing: 0.1px;
-      transition: color .2s;
-      padding: 8px 0;
-    }
-    .nav-links a:hover { color: var(--white); }
+  @media (prefers-reduced-motion: reduce) {
+    .net-node, .net-line { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .net-line { opacity: .4 !important; }
+    .net-spin { animation: none !important; }
+  }
 
-    /* Dropdown */
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-toggle {
-      display: flex; align-items: center; gap: 5px;
-      color: rgba(255,255,255,0.6); font-size: 14px; font-weight: 500;
-      cursor: pointer; padding: 8px 0; transition: color .2s;
-      background: none; border: none; font-family: inherit;
-    }
-    .nav-dropdown-toggle:hover { color: var(--white); }
-    .nav-dropdown-toggle i { font-size: 10px; transition: transform .2s; }
-    .nav-dropdown:hover .nav-dropdown-toggle i { transform: rotate(180deg); }
-    .nav-dropdown-menu {
-      position: absolute; top: calc(100% + 8px); left: 0;
-      background: var(--black-2); border: 1px solid var(--purple-border);
-      border-radius: 10px; padding: 8px 0; min-width: 210px;
-      opacity: 0; visibility: hidden;
-      transform: translateY(-8px); transition: all .2s; z-index: 300;
-    }
-    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .nav-dropdown-menu a {
-      display: block; padding: 10px 18px;
-      color: rgba(255,255,255,0.65); font-size: 13px; font-weight: 500;
-      transition: color .15s, background .15s;
-    }
-    .nav-dropdown-menu a:hover { color: var(--white); background: rgba(170,123,251,0.08); }
+  /* mobile drawer */
+  #nav-mobile { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  #nav-mobile.open { max-height: 400px; }
 
-    .nav-cta {
-      background: var(--lime); color: var(--black);
-      padding: 10px 22px; border-radius: 6px;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.2px;
-      transition: opacity .2s, transform .15s;
-    }
-    .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
-
-    /* Hamburger (mobile only) */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column; gap: 5px;
-      padding: 8px; border-radius: 6px;
-      transition: background .2s;
-    }
-    .nav-hamburger:hover { background: rgba(255,255,255,0.06); }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--white); border-radius: 2px;
-      transition: transform .25s, opacity .2s;
-    }
-    .nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-    .nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-
-    /* Mobile drawer */
-    .nav-mobile {
-      display: none;
-      position: fixed; top: var(--nav-h); left: 0; right: 0;
-      background: var(--black-2);
-      border-bottom: 1px solid var(--purple-border);
-      padding: 24px 24px 32px;
-      flex-direction: column; gap: 8px;
-      z-index: 199;
-    }
-    .nav-mobile.open { display: flex; }
-    .nav-mobile a {
-      color: rgba(255,255,255,0.75);
-      font-size: 16px; font-weight: 500;
-      padding: 12px 8px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: color .2s;
-    }
-    .nav-mobile a:last-child { border-bottom: none; }
-    .nav-mobile a:hover { color: var(--white); }
-    .nav-mobile .nav-mobile-cta {
-      margin-top: 16px;
-      background: var(--lime); color: var(--black);
-      text-align: center; padding: 14px;
-      border-radius: 7px; font-weight: 700;
-      font-size: 15px; border-bottom: none;
-    }
-
-    /* ═══════════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════════ */
-    .hero {
-      min-height: 100vh;
-      padding-top: var(--nav-h);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-      padding-left: 64px;
-      padding-right: 64px;
-      position: relative;
-      overflow: hidden;
-      background: var(--black);
-    }
-
-    /* Grid lines */
-    .hero::after {
-      content: '';
-      position: absolute; inset: 0; z-index: 0;
-      background-image:
-        linear-gradient(rgba(170,123,251,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(170,123,251,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
-    /* Glow */
-    .hero::before {
-      content: '';
-      position: absolute;
-      right: 0; top: 50%; transform: translateY(-50%);
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(170,123,251,0.14) 0%, transparent 65%);
-      z-index: 0; pointer-events: none;
-    }
-
-    .hero-left {
-      position: relative; z-index: 2;
-      padding-bottom: 64px;
-      min-width: 0; /* prevent grid item overflow */
-    }
-
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid var(--lime-border);
-      background: var(--lime-dim);
-      padding: 6px 14px; border-radius: 100px;
-      font-size: 11px; font-weight: 600; color: var(--lime);
-      letter-spacing: 1.5px; text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .hero-tag::before {
-      content: '';
-      width: 5px; height: 5px; border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 8px var(--lime);
-      flex-shrink: 0;
-    }
-
-    .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(44px, 5.5vw, 68px);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -3px;
-      margin-bottom: 24px;
-      color: var(--white);
-      text-transform: uppercase;
-    }
-    .hero h1 .grad-word {
-      background: linear-gradient(90deg, var(--lime), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-desc {
-      color: var(--gray);
-      font-size: 17px; line-height: 1.75;
-      margin-bottom: 40px;
-      font-weight: 400; max-width: 480px;
-    }
-
-    .hero-actions {
-      display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
-    }
-
-    .btn-lime {
-      background: var(--lime); color: var(--black);
-      padding: 15px 34px; border-radius: 7px;
-      font-weight: 700; font-size: 14px;
-      letter-spacing: 0.2px;
-      transition: opacity .2s, transform .15s;
-      box-shadow: 0 0 32px rgba(205,252,124,0.25);
-      display: inline-block;
-    }
-    .btn-lime:hover { opacity: .88; transform: translateY(-2px); }
-
-    .btn-outline {
-      color: rgba(255,255,255,0.7);
-      font-size: 14px; font-weight: 500;
-      padding: 15px 26px;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 7px;
-      transition: color .2s, border-color .2s;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-outline::after { content: '→'; font-size: 15px; }
-    .btn-outline:hover {
-      color: var(--white);
-      border-color: rgba(205,252,124,0.4);
-    }
-
-    /* Hero right — circuit */
-    .hero-right {
-      position: relative; z-index: 2;
-      display: flex; align-items: center; justify-content: center;
-      padding-bottom: 64px;
-    }
-    .circuit-wrap {
-      width: min(420px, 90%);
-      aspect-ratio: 1;
-      position: relative;
-    }
-    .circuit-glow {
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(170,123,251,0.2) 0%, transparent 60%);
-      border-radius: 50%;
-    }
-    .circuit-svg {
-      width: 100%; height: 100%;
-      position: relative; z-index: 2;
-    }
-
-    /* ── CIRCUIT ANIMATIONS ── */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50%       { transform: translateY(-14px); }
-    }
-    @keyframes pulse-lime {
-      0%, 100% { opacity: 0.9; filter: drop-shadow(0 0 4px #CDFC7C); }
-      50%       { opacity: 0.4; filter: drop-shadow(0 0 1px #CDFC7C); }
-    }
-    @keyframes pulse-purple {
-      0%, 100% { opacity: 0.9; filter: drop-shadow(0 0 4px #AA7BFB); }
-      50%       { opacity: 0.3; filter: drop-shadow(0 0 1px #AA7BFB); }
-    }
-    @keyframes trace-dash {
-      from { stroke-dashoffset: 300; }
-      to   { stroke-dashoffset: 0; }
-    }
-    @keyframes glow-pulse {
-      0%, 100% { opacity: 0.2; }
-      50%       { opacity: 0.45; }
-    }
-
-    .circuit-wrap {
-      animation: float 5s ease-in-out infinite;
-    }
-    .circuit-glow {
-      animation: glow-pulse 3s ease-in-out infinite;
-    }
-    /* Node pulses */
-    .node-lime { animation: pulse-lime 2.5s ease-in-out infinite; }
-    .node-lime-2 { animation: pulse-lime 2.5s ease-in-out infinite 0.8s; }
-    .node-lime-3 { animation: pulse-lime 2.5s ease-in-out infinite 1.6s; }
-    .node-purple { animation: pulse-purple 3s ease-in-out infinite 0.4s; }
-    .node-purple-2 { animation: pulse-purple 3s ease-in-out infinite 1.2s; }
-    /* Trace animations */
-    .trace-1 { stroke-dasharray: 300; animation: trace-dash 3s linear infinite; }
-    .trace-2 { stroke-dasharray: 300; animation: trace-dash 3s linear infinite 1s; }
-    .trace-3 { stroke-dasharray: 300; animation: trace-dash 3s linear infinite 2s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .circuit-wrap, .circuit-glow, .node-lime, .node-lime-2, .node-lime-3,
-      .node-purple, .node-purple-2, .trace-1, .trace-2, .trace-3 {
-        animation: none;
-      }
-    }
-
-    /* ═══════════════════════════════════════════
-       SERVICES
-    ═══════════════════════════════════════════ */
-    .services {
-      background: var(--mint);
-      position: relative;
-      clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
-      padding: 120px 64px;
-      margin: -40px 0;
-    }
-    .services-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      color: #8B5CF6;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase;
-      margin-bottom: 10px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block; width: 24px; height: 2px;
-      background: #8B5CF6; border-radius: 2px;
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 3.5vw, 42px);
-      font-weight: 800; letter-spacing: -1.5px;
-      color: var(--text-dark);
-      margin-bottom: 14px;
-    }
-    .section-sub {
-      color: #4A5568;
-      font-size: 17px; line-height: 1.65;
-      max-width: 560px;
-      margin-bottom: 56px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 28px 24px;
-      border: 1px solid rgba(0,0,0,0.06);
-      transition: transform .25s, box-shadow .25s, border-color .25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--grad);
-      opacity: 0; transition: opacity .25s;
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.1);
-      border-color: rgba(170,123,251,0.2);
-    }
-    .service-card:hover::before { opacity: 1; }
-
-    .card-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: rgba(170,123,251,0.1);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px;
-      color: #8B5CF6;
-      font-size: 18px;
-    }
-
-    .service-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 15px; font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 8px; line-height: 1.25;
-    }
-    .service-card p {
-      color: #718096;
-      font-size: 13px; line-height: 1.65;
-    }
-
-    /* ═══════════════════════════════════════════
-       CTA BAND
-    ═══════════════════════════════════════════ */
-    .cta-band {
-      background: var(--black-2);
-      padding: 80px 64px;
-      margin-top: 40px;
-      position: relative; overflow: hidden;
-      text-align: center;
-    }
-    .cta-band::before {
-      content: '';
-      position: absolute;
-      top: -100px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(170,123,251,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-band h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 4vw, 46px);
-      font-weight: 800; letter-spacing: -2px;
-      color: var(--white);
-      margin-bottom: 16px;
-      position: relative; z-index: 1;
-      line-height: 1.15;
-    }
-    .cta-band h2 span {
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .cta-band p {
-      color: var(--gray);
-      font-size: 17px; line-height: 1.65;
-      max-width: 480px;
-      margin: 0 auto 40px;
-      position: relative; z-index: 1;
-    }
-    .cta-band .btn-lime { position: relative; z-index: 1; }
-
-    /* ═══════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════ */
-    footer {
-      background: var(--black);
-      padding: 40px 64px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .footer-logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 18px; font-weight: 800;
-      color: var(--white);
-      display: flex; align-items: center; gap: 3px;
-    }
-    .footer-logo .dot {
-      display: inline-block; width: 6px; height: 6px;
-      border-radius: 50%; background: var(--lime);
-      position: relative; top: -3px;
-    }
-    .footer-links {
-      display: flex; gap: 28px;
-    }
-    .footer-links a {
-      color: rgba(255,255,255,0.35);
-      font-size: 13px;
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: rgba(255,255,255,0.7); }
-    .footer-copy {
-      color: rgba(255,255,255,0.2);
-      font-size: 12px;
-    }
-
-    /* ═══════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════ */
-
-    /* Tablet */
-    @media (max-width: 1024px) {
-      .nav { padding: 0 32px; }
-      .hero { padding: 0 32px; gap: 24px; }
-      .services { padding: 120px 32px; }
-      .cta-band { padding: 64px 32px; }
-      footer { padding: 40px 32px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .hero h1 { font-size: clamp(38px, 5vw, 56px); }
-    }
-
-    /* Mobile */
-    @media (max-width: 767px) {
-      :root { --nav-h: 60px; }
-
-      .nav { padding: 0 20px; }
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
-
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding: var(--nav-h) 20px 48px;
-        gap: 0;
-      }
-      .hero::before { display: none; }
-      .hero-left { padding-bottom: 0; }
-      .hero h1 {
-        font-size: 21px;
-        letter-spacing: 0px;
-      }
-      .hero h1 br { display: none; }
-      .hero-desc { font-size: 15px; max-width: 100%; }
-      .hero-right { display: none; }
-
-      .services {
-        clip-path: none;
-        padding: 64px 20px;
-        margin: 0;
-      }
-      .services-grid { grid-template-columns: 1fr; gap: 16px; }
-      .service-card { padding: 24px 20px; }
-
-      .cta-band { padding: 48px 20px; }
-      .cta-band h2 { font-size: clamp(26px, 8vw, 36px); letter-spacing: -1px; }
-
-      footer {
-        padding: 32px 20px;
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-      }
-      .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
-    }
-
-    /* ═══════════════════════════════════════════
-       ACCESSIBILITY — reduced motion
-    ═══════════════════════════════════════════ */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
-      html { scroll-behavior: auto; }
-    }
-  </style>
+  .hamburger span {
+    display: block; width: 22px; height: 2px; background: #fff;
+    margin: 4px 0; transition: transform .25s, opacity .25s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+</style>
 </head>
 
-<body>
-  <a href="#main" class="skip-link">Saltar al contenido</a>
+<body class="bg-ink text-white font-sans overflow-x-hidden">
 
-  <!-- ── NAV ── -->
-  <header role="banner">
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="index.html" class="nav-logo" aria-label="Think4Good — inicio">
-        <img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[999] focus:bg-lime focus:text-ink focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold">Saltar al contenido</a>
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 w-full z-[100] bg-ink/90 backdrop-blur-md border-b border-purple/10">
+    <nav class="flex items-center justify-between h-16 md:h-[68px] px-5 md:px-16" aria-label="Navegación principal">
+      <a href="index.html" class="flex items-center shrink-0">
+        <img src="logo-degradado.png" alt="Think4Good" class="h-8 object-contain">
       </a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="index.html" aria-current="page">Inicio</a></li>
-        <li class="nav-dropdown">
-          <button class="nav-dropdown-toggle" aria-haspopup="true">Servicios <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-          <ul class="nav-dropdown-menu" role="menu">
-            <li><a href="staffingti.html" role="menuitem">Staffing TI</a></li>
-            <li><a href="consultoria.html" role="menuitem">Consultoría TI</a></li>
-            <li><a href="testing.html" role="menuitem">QA Testing</a></li>
-            <li><a href="statement.html" role="menuitem">Statements</a></li>
-            <li><a href="softwareamedida.html" role="menuitem">Software a Medida</a></li>
-          </ul>
-        </li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="testimonios.html">Testimonios</a></li>
-      <li><a href="productos.html">Productos</a></li>
+      <ul class="hidden lg:flex items-center gap-9 text-sm font-medium text-white/60">
+        <li><a href="#servicios" class="hover:text-white transition-colors">Servicios</a></li>
+        <li><a href="#proceso" class="hover:text-white transition-colors">Cómo trabajamos</a></li>
+        <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+        <li><a href="testimonios.html" class="hover:text-white transition-colors">Testimonios</a></li>
       </ul>
 
-      <a href="contacto.html" class="nav-cta">Contáctanos</a>
+      <a href="contacto.html" class="hidden lg:inline-block bg-lime text-ink text-sm font-semibold px-5 py-2.5 rounded-md hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-[0_0_24px_rgba(205,252,124,0.25)]">
+        Agendar diagnóstico
+      </a>
 
-      <button
-        class="nav-hamburger"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="nav-mobile"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+      <button id="hamburger" class="hamburger lg:hidden p-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
       </button>
     </nav>
 
-    <!-- Mobile drawer -->
-    <nav id="nav-mobile" class="nav-mobile" aria-label="Menú móvil">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="testimonios.html">Testimonios</a>
-      <a href="productos.html">Productos</a>
-      <a href="contacto.html" class="nav-mobile-cta">Contáctanos</a>
-    </nav>
+    <div id="nav-mobile" class="lg:hidden bg-ink2 border-t border-white/5 px-6">
+      <div class="flex flex-col gap-1 py-4 text-sm font-medium text-white/70">
+        <a href="#servicios" class="py-2.5">Servicios</a>
+        <a href="#proceso" class="py-2.5">Cómo trabajamos</a>
+        <a href="nosotros.html" class="py-2.5">Nosotros</a>
+        <a href="testimonios.html" class="py-2.5">Testimonios</a>
+        <a href="contacto.html" class="mt-2 bg-lime text-ink text-center font-semibold px-5 py-3 rounded-md">Agendar diagnóstico</a>
+      </div>
+    </div>
   </header>
 
-  <!-- ── MAIN ── -->
   <main id="main">
-
     <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-left">
-        <div class="hero-tag" aria-hidden="true">IT Services · Latam</div>
-        <h1 id="hero-heading">
-          TRANSFORMAMOS<br>
-          TU <span class="grad-word">NEGOCIO</span><br>
-          CON TECNOLOGÍA.
-        </h1>
-        <p class="hero-desc" data-pretext>
-          Staffing TI, desarrollo de software, consultoría y QA. Soluciones tecnológicas de alto impacto para empresas que quieren crecer.
-        </p>
-        <div class="hero-actions">
-          <a href="contacto.html" class="btn-lime">Comencemos</a>
-          <a href="servicios.html" class="btn-outline">Ver servicios</a>
-        </div>
-      </div>
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-5 md:px-16 overflow-hidden">
+      <div class="absolute inset-0 -z-10" style="background-image:linear-gradient(rgba(170,123,251,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(170,123,251,.05) 1px,transparent 1px);background-size:56px 56px;"></div>
+      <div class="absolute -z-10 right-[-120px] top-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full" style="background:radial-gradient(circle,rgba(170,123,251,.16) 0%,transparent 65%)"></div>
 
-      <div class="hero-right" aria-hidden="true">
-        <div class="circuit-wrap">
-          <div class="circuit-glow"></div>
-          <svg class="circuit-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de circuito tecnológico">
-            <!-- Central chip -->
-            <rect x="150" y="150" width="100" height="100" rx="12"
-              fill="rgba(170,123,251,0.12)" stroke="rgba(170,123,251,0.5)" stroke-width="1.5"/>
-            <rect x="168" y="168" width="64" height="64" rx="6"
-              fill="rgba(170,123,251,0.2)" stroke="rgba(205,252,124,0.4)" stroke-width="1"/>
-            <!-- Traces top -->
-            <path class="trace-1" d="M200 150 L200 90 L280 90 L280 50" stroke="rgba(205,252,124,0.5)" stroke-width="1.5" fill="none"/>
-            <path d="M230 150 L230 110 L310 110 L310 70" stroke="rgba(170,123,251,0.35)" stroke-width="1" fill="none"/>
-            <path d="M170 150 L170 80 L120 80 L120 40" stroke="rgba(205,252,124,0.3)" stroke-width="1" fill="none"/>
-            <!-- Traces right -->
-            <path class="trace-2" d="M250 200 L330 200 L330 150 L370 150" stroke="rgba(205,252,124,0.5)" stroke-width="1.5" fill="none"/>
-            <path d="M250 230 L320 230 L320 280 L360 280" stroke="rgba(170,123,251,0.3)" stroke-width="1" fill="none"/>
-            <!-- Traces bottom -->
-            <path class="trace-3" d="M200 250 L200 320 L140 320 L140 360" stroke="rgba(170,123,251,0.5)" stroke-width="1.5" fill="none"/>
-            <path d="M170 250 L170 300 L80 300 L80 350" stroke="rgba(205,252,124,0.25)" stroke-width="1" fill="none"/>
-            <!-- Traces left -->
-            <path d="M150 200 L70 200 L70 260 L30 260" stroke="rgba(205,252,124,0.4)" stroke-width="1.5" fill="none"/>
-            <path d="M150 170 L90 170 L90 120 L50 120" stroke="rgba(170,123,251,0.25)" stroke-width="1" fill="none"/>
-            <!-- Nodes lime -->
-            <circle class="node-lime" cx="280" cy="50" r="5" fill="#CDFC7C"/>
-            <circle class="node-lime-2" cx="370" cy="150" r="5" fill="#CDFC7C" opacity="0.7"/>
-            <circle class="node-lime-3" cx="30" cy="260" r="5" fill="#CDFC7C" opacity="0.8"/>
-            <circle cx="120" cy="40" r="4" fill="#CDFC7C" opacity="0.5"/>
-            <!-- Nodes purple -->
-            <circle class="node-purple" cx="140" cy="360" r="5" fill="#AA7BFB"/>
-            <circle class="node-purple-2" cx="360" cy="280" r="5" fill="#AA7BFB" opacity="0.7"/>
-            <circle cx="50" cy="120" r="4" fill="#AA7BFB" opacity="0.6"/>
-            <circle cx="310" cy="70" r="4" fill="#AA7BFB" opacity="0.5"/>
-            <!-- Connector dots -->
-            <circle cx="280" cy="90" r="3" fill="rgba(205,252,124,0.4)"/>
-            <circle cx="330" cy="200" r="3" fill="rgba(205,252,124,0.4)"/>
-            <circle cx="200" cy="320" r="3" fill="rgba(170,123,251,0.5)"/>
-            <circle cx="70" cy="200" r="3" fill="rgba(205,252,124,0.5)"/>
-            <!-- Dot grid -->
-            <circle cx="60" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/>
-            <circle cx="340" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/>
-            <circle cx="60" cy="340" r="1.5" fill="rgba(255,255,255,0.08)"/>
-            <circle cx="340" cy="340" r="1.5" fill="rgba(255,255,255,0.08)"/>
-            <circle cx="200" cy="40" r="1.5" fill="rgba(255,255,255,0.06)"/>
-            <circle cx="360" cy="200" r="1.5" fill="rgba(255,255,255,0.06)"/>
-            <circle cx="200" cy="360" r="1.5" fill="rgba(255,255,255,0.06)"/>
-            <circle cx="40" cy="200" r="1.5" fill="rgba(255,255,255,0.06)"/>
+      <div class="max-w-7xl mx-auto grid xl:grid-cols-2 gap-16 items-center">
+        <div class="min-w-0">
+          <p class="inline-flex items-center gap-2 text-lime text-[11px] font-semibold tracking-[1.5px] uppercase border border-lime/30 bg-lime/5 px-3.5 py-1.5 rounded-full mb-6">
+            <span class="w-[5px] h-[5px] rounded-full bg-lime shadow-[0_0_8px_#CDFC7C]"></span>
+            Consultoría TI
+          </p>
+          <h1 class="font-display font-extrabold uppercase break-words leading-[1.1] tracking-tight text-[32px] sm:text-5xl md:text-6xl xl:text-[52px] mb-6">
+            Del caos a un <span class="grad-text">sistema</span> que funciona.
+          </h1>
+          <p class="text-fog text-base sm:text-lg leading-relaxed max-w-md mb-10">
+            Auditamos tus procesos, ordenamos tu arquitectura y te acompañamos en cada etapa de la implementación — para que la tecnología deje de ser un problema y empiece a ser tu ventaja.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="contacto.html" class="bg-lime text-ink font-bold text-sm px-8 py-4 rounded-lg shadow-[0_0_28px_rgba(205,252,124,0.25)] hover:opacity-90 hover:-translate-y-0.5 transition-all">
+              Agendar diagnóstico
+            </a>
+            <a href="#servicios" class="text-white/70 text-sm font-medium px-6 py-4 rounded-lg border border-white/15 hover:text-white hover:border-lime/40 transition-colors">
+              Ver servicios
+            </a>
+          </div>
+        </div>
+
+        <!-- Signature diagram: chaos -> order -->
+        <div class="relative flex items-center justify-center h-[380px] sm:h-[440px]">
+          <div class="absolute inset-0 rounded-full" style="background:radial-gradient(circle at 50% 50%,rgba(170,123,251,.18) 0%,transparent 60%)"></div>
+          <svg viewBox="0 0 460 460" class="relative w-full max-w-[440px] h-full" aria-hidden="true">
+            <circle cx="40"  cy="40"  r="1.5" fill="rgba(255,255,255,.08)"/>
+            <circle cx="420" cy="40"  r="1.5" fill="rgba(255,255,255,.08)"/>
+            <circle cx="40"  cy="420" r="1.5" fill="rgba(255,255,255,.08)"/>
+            <circle cx="420" cy="420" r="1.5" fill="rgba(255,255,255,.08)"/>
+            <g class="net-spin">
+              <g fill="none" stroke="#AA7BFB" stroke-width="1">
+                <line class="net-line" style="--d:.05s" x1="230" y1="230" x2="230" y2="90"/>
+                <line class="net-line" style="--d:.1s"  x1="230" y1="230" x2="329" y2="131"/>
+                <line class="net-line" style="--d:.15s" x1="230" y1="230" x2="370" y2="230"/>
+                <line class="net-line" style="--d:.2s"  x1="230" y1="230" x2="329" y2="329"/>
+                <line class="net-line" style="--d:.25s" x1="230" y1="230" x2="230" y2="370"/>
+                <line class="net-line" style="--d:.3s"  x1="230" y1="230" x2="131" y2="329"/>
+                <line class="net-line" style="--d:.35s" x1="230" y1="230" x2="90"  y2="230"/>
+                <line class="net-line" style="--d:.4s"  x1="230" y1="230" x2="131" y2="131"/>
+              </g>
+              <circle class="net-node" style="--d:0s" cx="230" cy="230" r="14" fill="#AA7BFB"/>
+              <circle class="net-node" style="--tx:-40px;--ty:-70px;--d:.05s"  cx="230" cy="90"  r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:60px;--ty:-40px;--d:.1s"   cx="329" cy="131" r="6" fill="#CDFC7C" opacity=".9"/>
+              <circle class="net-node" style="--tx:80px;--ty:20px;--d:.15s"   cx="370" cy="230" r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:50px;--ty:70px;--d:.2s"    cx="329" cy="329" r="6" fill="#AA7BFB" opacity=".85"/>
+              <circle class="net-node" style="--tx:-20px;--ty:90px;--d:.25s"  cx="230" cy="370" r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:-70px;--ty:50px;--d:.3s"   cx="131" cy="329" r="6" fill="#AA7BFB" opacity=".85"/>
+              <circle class="net-node" style="--tx:-90px;--ty:-10px;--d:.35s" cx="90"  cy="230" r="7" fill="#CDFC7C"/>
+              <circle class="net-node" style="--tx:-50px;--ty:-60px;--d:.4s"  cx="131" cy="131" r="6" fill="#AA7BFB" opacity=".85"/>
+            </g>
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="services" aria-labelledby="services-heading">
-      <div class="services-inner">
-        <p class="section-eyebrow" aria-hidden="true">Lo que hacemos</p>
-        <h2 class="section-title" id="services-heading">Nuestros Servicios</h2>
-        <p class="section-sub" data-pretext>
+    <!-- SERVICIOS -->
+    <section id="servicios" class="bg-mint text-ink py-20 md:py-28 px-5 md:px-16">
+      <div class="max-w-7xl mx-auto">
+        <p class="inline-flex items-center gap-2 text-purpledark text-[11px] font-semibold tracking-[1.5px] uppercase border border-purple/30 bg-purple/5 px-3.5 py-1.5 rounded-full mb-3">
+          <span class="w-[5px] h-[5px] rounded-full bg-purpledark shadow-[0_0_8px_#AA7BFB]"></span>
+          Lo que hacemos
+        </p>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-[42px] tracking-tight mb-4">Nuestros servicios</h2>
+        <p class="text-[#4A5568] text-base sm:text-lg leading-relaxed max-w-xl mb-14">
           Soluciones tecnológicas integrales para cada etapa de tu empresa, desde la consultoría inicial hasta la ejecución completa.
         </p>
 
-        <div class="services-grid">
-
-          <a href="consultoria.html" class="service-card" style="text-decoration:none;display:block">
-            <div class="card-icon" aria-hidden="true">
-              <i class="fas fa-cogs"></i>
-            </div>
-            <h3>Consultoría TI & Procesos</h3>
-            <p data-pretext>El primer paso para saber cómo estamos y hacia dónde ir.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="consultoria.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+            <span class="font-mono text-xs text-purple/70">01</span>
+            <h3 class="font-display font-bold text-base mt-3 mb-2">Consultoría TI &amp; Procesos</h3>
+            <p class="text-[#718096] text-sm leading-relaxed">El primer paso para saber cómo estamos y hacia dónde ir.</p>
+            <span class="block h-[3px] w-0 group-hover:w-full mt-5 grad-line rounded-full transition-all duration-300"></span>
           </a>
-
-          <a href="productos.html" class="service-card" style="text-decoration:none;display:block">
-            <div class="card-icon" aria-hidden="true">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <h3>Productos Propios</h3>
-            <p data-pretext>Nuestras plataformas SaaS: Timelot, Nexora, Evalion, PropStaff y más.</p>
+          <a href="productos.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+            <span class="font-mono text-xs text-purple/70">02</span>
+            <h3 class="font-display font-bold text-base mt-3 mb-2">Productos Propios</h3>
+            <p class="text-[#718096] text-sm leading-relaxed">Nuestras plataformas SaaS: Timelot, Nexora, Evalion, PropStaff y más.</p>
+            <span class="block h-[3px] w-0 group-hover:w-full mt-5 grad-line rounded-full transition-all duration-300"></span>
           </a>
-
-
-          <a href="softwareamedida.html" class="service-card" style="text-decoration:none;display:block">
-            <div class="card-icon" aria-hidden="true">
-              <i class="fas fa-laptop-code"></i>
-            </div>
-            <h3>Software a Medida</h3>
-            <p data-pretext>Soluciones diseñadas exclusivamente para tu negocio.</p>
+          <a href="softwareamedida.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+            <span class="font-mono text-xs text-purple/70">03</span>
+            <h3 class="font-display font-bold text-base mt-3 mb-2">Software a Medida</h3>
+            <p class="text-[#718096] text-sm leading-relaxed">Soluciones diseñadas exclusivamente para tu negocio.</p>
+            <span class="block h-[3px] w-0 group-hover:w-full mt-5 grad-line rounded-full transition-all duration-300"></span>
           </a>
-
-          <a href="testing.html" class="service-card" style="text-decoration:none;display:block">
-            <div class="card-icon" aria-hidden="true">
-              <i class="fas fa-vial"></i>
-            </div>
-            <h3>QA Testing & Automation</h3>
-            <p data-pretext>Prevén errores y garantizá la calidad de cada entrega.</p>
+          <a href="testing.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+            <span class="font-mono text-xs text-purple/70">04</span>
+            <h3 class="font-display font-bold text-base mt-3 mb-2">QA Testing &amp; Automation</h3>
+            <p class="text-[#718096] text-sm leading-relaxed">Previene errores y garantiza la calidad de cada entrega.</p>
+            <span class="block h-[3px] w-0 group-hover:w-full mt-5 grad-line rounded-full transition-all duration-300"></span>
           </a>
-
-          <a href="statement.html" class="service-card" style="text-decoration:none;display:block">
-            <div class="card-icon" aria-hidden="true">
-              <i class="fas fa-chart-bar"></i>
-            </div>
-            <h3>Statements</h3>
-            <p data-pretext>Evaluaciones precisas para un rendimiento insuperable.</p>
+          <a href="statement.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+            <span class="font-mono text-xs text-purple/70">05</span>
+            <h3 class="font-display font-bold text-base mt-3 mb-2">Statements</h3>
+            <p class="text-[#718096] text-sm leading-relaxed">Evaluaciones precisas para un rendimiento insuperable.</p>
+            <span class="block h-[3px] w-0 group-hover:w-full mt-5 grad-line rounded-full transition-all duration-300"></span>
           </a>
-
-          <a href="staffingti.html" class="service-card" style="text-decoration:none;display:block">
-            <div class="card-icon" aria-hidden="true">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>Staffing TI</h3>
-            <p data-pretext>Tu aliado estratégico de inicio a fin para cada proyecto.</p>
+          <a href="staffingti.html" class="group block bg-white rounded-xl p-7 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+            <span class="font-mono text-xs text-purple/70">06</span>
+            <h3 class="font-display font-bold text-base mt-3 mb-2">Staffing TI</h3>
+            <p class="text-[#718096] text-sm leading-relaxed">Tu aliado estratégico de inicio a fin para cada proyecto.</p>
+            <span class="block h-[3px] w-0 group-hover:w-full mt-5 grad-line rounded-full transition-all duration-300"></span>
           </a>
-
-
         </div>
       </div>
     </section>
 
-    <!-- CTA BAND -->
-    <section class="cta-band" aria-labelledby="cta-heading">
-      <h2 id="cta-heading">
-        ¿Listo para dar el<br>
-        <span>siguiente paso</span>?
-      </h2>
-      <p data-pretext>
-        Contanos tu desafío y armamos juntos la solución tecnológica que tu empresa necesita.
-      </p>
-      <a href="contacto.html" class="btn-lime">Hablemos hoy</a>
+    <!-- PROCESO -->
+    <section id="proceso" class="bg-ink2 py-20 md:py-28 px-5 md:px-16">
+      <div class="max-w-4xl mx-auto">
+        <p class="inline-flex items-center gap-2 text-lime text-[11px] font-semibold tracking-[1.5px] uppercase border border-lime/30 bg-lime/5 px-3.5 py-1.5 rounded-full mb-3">
+          <span class="w-[5px] h-[5px] rounded-full bg-lime shadow-[0_0_8px_#CDFC7C]"></span>
+          Cómo trabajamos
+        </p>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-[42px] tracking-tight mb-14">
+          Un proceso, no una promesa.
+        </h2>
+
+        <ol class="space-y-10">
+          <li class="flex flex-col sm:flex-row gap-2 sm:gap-10 min-w-0">
+            <span class="font-mono text-purple/60 text-sm shrink-0 pt-1">// 01_diagnóstico</span>
+            <div class="border-l-0 sm:border-l border-white/10 pl-0 sm:pl-10 min-w-0">
+              <h3 class="font-display font-bold text-lg sm:text-xl mb-2">Evaluación inicial</h3>
+              <p class="text-fog text-sm sm:text-base leading-relaxed max-w-lg">Revisión completa de tus procesos actuales, infraestructura y recursos disponibles para establecer una línea base clara.</p>
+            </div>
+          </li>
+          <li class="flex flex-col sm:flex-row gap-2 sm:gap-10 min-w-0">
+            <span class="font-mono text-purple/60 text-sm shrink-0 pt-1">// 02_estrategia</span>
+            <div class="border-l-0 sm:border-l border-white/10 pl-0 sm:pl-10 min-w-0">
+              <h3 class="font-display font-bold text-lg sm:text-xl mb-2">Planificación estratégica</h3>
+              <p class="text-fog text-sm sm:text-base leading-relaxed max-w-lg">Propuesta de soluciones a medida, definición de prioridades y un plan de acción con metas concretas y plazos realistas.</p>
+            </div>
+          </li>
+          <li class="flex flex-col sm:flex-row gap-2 sm:gap-10 min-w-0">
+            <span class="font-mono text-purple/60 text-sm shrink-0 pt-1">// 03_implementación</span>
+            <div class="border-l-0 sm:border-l border-white/10 pl-0 sm:pl-10 min-w-0">
+              <h3 class="font-display font-bold text-lg sm:text-xl mb-2">Implementación y soporte</h3>
+              <p class="text-fog text-sm sm:text-base leading-relaxed max-w-lg">Acompañamiento integral: adopción de nuevas herramientas, capacitación de tu equipo y seguimiento de resultados.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </section>
 
+    <!-- CTA -->
+    <section class="relative overflow-hidden bg-ink2 py-20 md:py-24 px-5 md:px-16 text-center">
+      <div class="absolute -z-0 left-1/2 -translate-x-1/2 -top-24 w-[560px] h-[560px] rounded-full" style="background:radial-gradient(circle,rgba(170,123,251,.15) 0%,transparent 70%)"></div>
+      <div class="relative max-w-2xl mx-auto">
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-[46px] tracking-tight mb-5">
+          ¿Listo para dar el <span class="grad-text">siguiente paso</span>?
+        </h2>
+        <p class="text-fog text-base sm:text-lg leading-relaxed mb-10">
+          Cuéntanos tu desafío y armamos juntos la solución tecnológica que tu empresa necesita.
+        </p>
+        <a href="contacto.html" class="inline-block bg-lime text-ink font-bold text-sm px-9 py-4 rounded-lg shadow-[0_0_28px_rgba(205,252,124,0.25)] hover:opacity-90 hover:-translate-y-0.5 transition-all">
+          Hablemos hoy
+        </a>
+      </div>
+    </section>
   </main>
 
-  <!-- ── FOOTER ── -->
-  <footer role="contentinfo">
-    <div class="footer-logo" aria-label="Think4Good">
-      <img src="logo-degradado.png" alt="Think4Good" height="34" style="display:block;object-fit:contain">
-    </div>
-    <ul class="footer-links" role="list">
-      <li><a href="politica.html">Privacidad</a></li>
-      <li><a href="terminosycondiciones.html">Términos</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+  <!-- FOOTER -->
+  <footer class="bg-ink border-t border-white/5 px-5 md:px-16 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <img src="logo-degradado.png" alt="Think4Good" class="h-7 object-contain">
+    <ul class="flex gap-6 text-sm text-white/35">
+      <li><a href="politica.html" class="hover:text-white/70 transition-colors">Privacidad</a></li>
+      <li><a href="terminosycondiciones.html" class="hover:text-white/70 transition-colors">Términos</a></li>
+      <li><a href="contacto.html" class="hover:text-white/70 transition-colors">Contacto</a></li>
     </ul>
-    <p class="footer-copy">© 2022 Think4Good. Todos los derechos reservados.</p>
+    <div class="flex gap-4 text-white/40 text-lg">
+      <a href="https://www.facebook.com/t4gthinkforgood" target="_blank" aria-label="Facebook" class="hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@t4g_pe" target="_blank" aria-label="TikTok" class="hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/t4g_pe" target="_blank" aria-label="Instagram" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/think4good" target="_blank" aria-label="LinkedIn" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/51982841022" target="_blank" aria-label="WhatsApp" class="hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <span class="text-xs text-white/20">© 2026 Think4Good. Todos los derechos reservados.</span>
   </footer>
 
-  <!-- ── SCRIPTS ── -->
-  <script type="module">
-    // ── PRETEXT — dynamic text layout ──
-    import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
-
-    async function initPretext() {
-      await document.fonts.ready;
-
-      const els = document.querySelectorAll('[data-pretext]');
-      const prepared = new Map();
-
-      for (const el of els) {
-        const text = el.textContent.trim();
-        const font = getComputedStyle(el).font;
-        if (text) prepared.set(el, prepare(text, font));
-      }
-
-      function relayout() {
-        for (const [el, handle] of prepared) {
-          const lh = parseFloat(getComputedStyle(el).lineHeight) || 24;
-          const { height } = layout(handle, el.clientWidth, lh);
-          if (height > 0) el.style.height = `${height}px`;
-        }
-      }
-
-      new ResizeObserver(relayout).observe(document.documentElement);
-      relayout();
-    }
-
-    initPretext().catch(() => {
-      // Graceful fallback: Pretext unavailable (offline), natural text flow used
-    });
-  </script>
-
   <script>
-    // ── MOBILE NAV ──
-    const hamburger = document.querySelector('.nav-hamburger');
-    const drawer    = document.getElementById('nav-mobile');
-
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('nav-mobile');
     hamburger?.addEventListener('click', () => {
       const open = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', String(!open));
-      hamburger.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
       drawer?.classList.toggle('open', !open);
     });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!hamburger?.contains(e.target) && !drawer?.contains(e.target)) {
-        hamburger?.setAttribute('aria-expanded', 'false');
-        hamburger?.setAttribute('aria-label', 'Abrir menú');
-        drawer?.classList.remove('open');
-      }
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        hamburger?.setAttribute('aria-expanded', 'false');
-        hamburger?.setAttribute('aria-label', 'Abrir menú');
-        drawer?.classList.remove('open');
-        hamburger?.focus();
-      }
-    });
+    drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger?.setAttribute('aria-expanded', 'false');
+      drawer.classList.remove('open');
+    }));
   </script>
 
 </body>
